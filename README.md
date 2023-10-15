@@ -14,7 +14,7 @@
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=guranshdeol&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 -->
 <p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&theme=transparent" />
+  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&theme=tokyonight" />
   <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&theme=tokyonight" />
 </p>
 
