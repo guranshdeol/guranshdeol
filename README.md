@@ -25,11 +25,11 @@
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#26](https://github.com/jamesgeorge007/csstox/pull/26) in [jamesgeorge007/csstox](https://github.com/jamesgeorge007/csstox)
-2. 🎉 Merged PR [#25](https://github.com/jamesgeorge007/csstox/pull/25) in [jamesgeorge007/csstox](https://github.com/jamesgeorge007/csstox)
-3. 🎉 Merged PR [#27](https://github.com/jamesgeorge007/csstox/pull/27) in [jamesgeorge007/csstox](https://github.com/jamesgeorge007/csstox)
-4. 🎉 Merged PR [#28](https://github.com/jamesgeorge007/csstox/pull/28) in [jamesgeorge007/csstox](https://github.com/jamesgeorge007/csstox)
-5. 🎉 Merged PR [#29](https://github.com/jamesgeorge007/csstox/pull/29) in [jamesgeorge007/csstox](https://github.com/jamesgeorge007/csstox)
+1. 🗣 Commented on [#16](https://github.com/Ctoic/Calculator-using-HTML-CSS-JS/pull/16#issuecomment-1763460943) in [Ctoic/Calculator-using-HTML-CSS-JS](https://github.com/Ctoic/Calculator-using-HTML-CSS-JS)
+2. 💪 Opened PR [#16](https://github.com/Ctoic/Calculator-using-HTML-CSS-JS/pull/16) in [Ctoic/Calculator-using-HTML-CSS-JS](https://github.com/Ctoic/Calculator-using-HTML-CSS-JS)
+3. ❗ Opened issue [#15](https://github.com/Ctoic/Calculator-using-HTML-CSS-JS/issues/15) in [Ctoic/Calculator-using-HTML-CSS-JS](https://github.com/Ctoic/Calculator-using-HTML-CSS-JS)
+4. 🗣 Commented on [#9502](https://github.com/EddieHubCommunity/BioDrop/issues/9502#issuecomment-1763314206) in [EddieHubCommunity/BioDrop](https://github.com/EddieHubCommunity/BioDrop)
+5. ❗ Opened issue [#8318](https://github.com/EddieHubCommunity/support/issues/8318) in [EddieHubCommunity/support](https://github.com/EddieHubCommunity/support)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
