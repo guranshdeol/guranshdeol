@@ -1,5 +1,7 @@
 # 🌐 Socials:
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/guranshdeol) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/guranshdeol) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/guranshdeol) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/guranshdeol) [![BioLink](https://img.shields.io/badge/BioLink-%230077B5.svg)](https://guranshdeol.bio.link)
+
+
 
 # 📛 BadgeBoard
 [![An image of @guranshdeol's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/guranshdeol)](https://holopin.io/@guranshdeol)
@@ -15,12 +17,12 @@
 -->
 <p align="center">
   <img width="48%" src="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&theme=tokyonight" />
-  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&theme=tokyonight" />
+  <img width="51%" src="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&theme=tokyonight" />
 </p>
 
-## 🏆 GitHub Trophies
+<!--## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=guranshdeol&theme=radical&no-frame=false&no-bg=false&margin-w=4)
-
+-->
 ### ✍️ Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
