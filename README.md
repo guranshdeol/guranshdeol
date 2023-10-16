@@ -3,7 +3,7 @@
 
 Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for Open Source, Web Development, and DevOps. I believe in the power of open collaboration, actively contributing to open-source projects. Crafting seamless web experiences is my forte, and I navigate the DevOps landscape for efficient integration and deployment. Let's connect and innovate together! 🚀
 
-[Let's Connect](bio.link/guranshdeol)
+[Let's Connect](https://bio.link/guranshdeol)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/guranshdeol) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/guranshdeol) [![BioLink](https://img.shields.io/badge/BioLink-%230077B5.svg)](https://guranshdeol.bio.link)
 
