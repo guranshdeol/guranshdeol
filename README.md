@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#5](https://github.com/GairikSharma/WeatherApp/pull/5) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
-2. ❗ Opened issue [#4](https://github.com/GairikSharma/WeatherApp/issues/4) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
-3. 🔒 Closed issue [#1](https://github.com/narze/emkay/issues/1) in [narze/emkay](https://github.com/narze/emkay)
-4. ❗ Opened issue [#1](https://github.com/narze/emkay/issues/1) in [narze/emkay](https://github.com/narze/emkay)
-5. 🗣 Commented on [#16](https://github.com/Ctoic/Calculator-using-HTML-CSS-JS/pull/16#issuecomment-1763460943) in [Ctoic/Calculator-using-HTML-CSS-JS](https://github.com/Ctoic/Calculator-using-HTML-CSS-JS)
+1. 💪 Opened PR [#22](https://github.com/aaishikasb/ghw-demo/pull/22) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
+2. 💪 Opened PR [#5](https://github.com/GairikSharma/WeatherApp/pull/5) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
+3. ❗ Opened issue [#4](https://github.com/GairikSharma/WeatherApp/issues/4) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
+4. 🔒 Closed issue [#1](https://github.com/narze/emkay/issues/1) in [narze/emkay](https://github.com/narze/emkay)
+5. ❗ Opened issue [#1](https://github.com/narze/emkay/issues/1) in [narze/emkay](https://github.com/narze/emkay)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
