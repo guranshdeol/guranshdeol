@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#45](https://github.com/aaishikasb/ghw-demo/pull/45) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
-2. ❌ Closed PR [#22](https://github.com/aaishikasb/ghw-demo/pull/22) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
-3. 💪 Opened PR [#22](https://github.com/aaishikasb/ghw-demo/pull/22) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
-4. 💪 Opened PR [#5](https://github.com/GairikSharma/WeatherApp/pull/5) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
-5. ❗ Opened issue [#4](https://github.com/GairikSharma/WeatherApp/issues/4) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
+1. 🗣 Commented on [#5](https://github.com/GairikSharma/WeatherApp/pull/5#issuecomment-1766614737) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
+2. 💪 Opened PR [#45](https://github.com/aaishikasb/ghw-demo/pull/45) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
+3. ❌ Closed PR [#22](https://github.com/aaishikasb/ghw-demo/pull/22) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
+4. 💪 Opened PR [#22](https://github.com/aaishikasb/ghw-demo/pull/22) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
+5. 💪 Opened PR [#5](https://github.com/GairikSharma/WeatherApp/pull/5) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
