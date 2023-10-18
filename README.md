@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. ❗ Opened issue [#143](https://github.com/eddiejaoude/eddiejaoude/issues/143) in [eddiejaoude/eddiejaoude](https://github.com/eddiejaoude/eddiejaoude)
-2. 🔒 Closed issue [#4](https://github.com/GairikSharma/WeatherApp/issues/4) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
-3. 🗣 Commented on [#5](https://github.com/GairikSharma/WeatherApp/pull/5#issuecomment-1766614737) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
-4. 💪 Opened PR [#45](https://github.com/aaishikasb/ghw-demo/pull/45) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
-5. ❌ Closed PR [#22](https://github.com/aaishikasb/ghw-demo/pull/22) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
+1. 💪 Opened PR [#144](https://github.com/eddiejaoude/eddiejaoude/pull/144) in [eddiejaoude/eddiejaoude](https://github.com/eddiejaoude/eddiejaoude)
+2. ❗ Opened issue [#143](https://github.com/eddiejaoude/eddiejaoude/issues/143) in [eddiejaoude/eddiejaoude](https://github.com/eddiejaoude/eddiejaoude)
+3. 🔒 Closed issue [#4](https://github.com/GairikSharma/WeatherApp/issues/4) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
+4. 🗣 Commented on [#5](https://github.com/GairikSharma/WeatherApp/pull/5#issuecomment-1766614737) in [GairikSharma/WeatherApp](https://github.com/GairikSharma/WeatherApp)
+5. 💪 Opened PR [#45](https://github.com/aaishikasb/ghw-demo/pull/45) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
