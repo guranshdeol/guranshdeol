@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#1](https://github.com/guranshdeol/Invoice-Generator/pull/1) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-2. 🗣 Commented on [#1](https://github.com/guranshdeol/Invoice-Generator/pull/1#issuecomment-1782915651) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-3. 🗣 Commented on [#36](https://github.com/Virtual4087/Tree2Hope/issues/36#issuecomment-1773872677) in [Virtual4087/Tree2Hope](https://github.com/Virtual4087/Tree2Hope)
-4. 💪 Opened PR [#144](https://github.com/eddiejaoude/eddiejaoude/pull/144) in [eddiejaoude/eddiejaoude](https://github.com/eddiejaoude/eddiejaoude)
-5. ❗ Opened issue [#143](https://github.com/eddiejaoude/eddiejaoude/issues/143) in [eddiejaoude/eddiejaoude](https://github.com/eddiejaoude/eddiejaoude)
+1. ❗ Opened issue [#4](https://github.com/guranshdeol/Invoice-Generator/issues/4) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+2. ❗ Opened issue [#3](https://github.com/guranshdeol/Invoice-Generator/issues/3) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+3. 🗣 Commented on [#2](https://github.com/guranshdeol/Invoice-Generator/issues/2#issuecomment-1783244286) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+4. 🎉 Merged PR [#1](https://github.com/guranshdeol/Invoice-Generator/pull/1) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+5. 🗣 Commented on [#1](https://github.com/guranshdeol/Invoice-Generator/pull/1#issuecomment-1782915651) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
