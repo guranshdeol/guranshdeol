@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#5](https://github.com/guranshdeol/Invoice-Generator/pull/5#issuecomment-1784133981) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-2. 🔒 Closed issue [#3](https://github.com/guranshdeol/Invoice-Generator/issues/3) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-3. 🎉 Merged PR [#5](https://github.com/guranshdeol/Invoice-Generator/pull/5) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-4. 🗣 Commented on [#5](https://github.com/guranshdeol/Invoice-Generator/pull/5#issuecomment-1784132384) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-5. 💪 Opened PR [#3323](https://github.com/illacloud/illa-builder/pull/3323) in [illacloud/illa-builder](https://github.com/illacloud/illa-builder)
+1. 🔒 Closed issue [#4](https://github.com/guranshdeol/Invoice-Generator/issues/4) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+2. 🎉 Merged PR [#6](https://github.com/guranshdeol/Invoice-Generator/pull/6) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+3. 🗣 Commented on [#6](https://github.com/guranshdeol/Invoice-Generator/pull/6#issuecomment-1784179803) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+4. 🗣 Commented on [#5](https://github.com/guranshdeol/Invoice-Generator/pull/5#issuecomment-1784133981) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+5. 🔒 Closed issue [#3](https://github.com/guranshdeol/Invoice-Generator/issues/3) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
