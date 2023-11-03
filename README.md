@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#7](https://github.com/guranshdeol/Invoice-Generator/pull/7#issuecomment-1788497512) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-2. ❌ Closed PR [#7](https://github.com/guranshdeol/Invoice-Generator/pull/7) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-3. 🗣 Commented on [#9690](https://github.com/EddieHubCommunity/BioDrop/pull/9690#issuecomment-1786628775) in [EddieHubCommunity/BioDrop](https://github.com/EddieHubCommunity/BioDrop)
-4. 💪 Opened PR [#9690](https://github.com/EddieHubCommunity/BioDrop/pull/9690) in [EddieHubCommunity/BioDrop](https://github.com/EddieHubCommunity/BioDrop)
-5. 🔒 Closed issue [#4](https://github.com/guranshdeol/Invoice-Generator/issues/4) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+1. ❗ Opened issue [#9718](https://github.com/EddieHubCommunity/BioDrop/issues/9718) in [EddieHubCommunity/BioDrop](https://github.com/EddieHubCommunity/BioDrop)
+2. 🗣 Commented on [#7](https://github.com/guranshdeol/Invoice-Generator/pull/7#issuecomment-1788497512) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+3. ❌ Closed PR [#7](https://github.com/guranshdeol/Invoice-Generator/pull/7) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+4. 🗣 Commented on [#9690](https://github.com/EddieHubCommunity/BioDrop/pull/9690#issuecomment-1786628775) in [EddieHubCommunity/BioDrop](https://github.com/EddieHubCommunity/BioDrop)
+5. 💪 Opened PR [#9690](https://github.com/EddieHubCommunity/BioDrop/pull/9690) in [EddieHubCommunity/BioDrop](https://github.com/EddieHubCommunity/BioDrop)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
