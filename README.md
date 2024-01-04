@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#38](https://github.com/pieces-app/example-ts/issues/38#issuecomment-1864875944) in [pieces-app/example-ts](https://github.com/pieces-app/example-ts)
-2. ❗ Opened issue [#8](https://github.com/guranshdeol/Invoice-Generator/issues/8) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-3. 🗣 Commented on [#2](https://github.com/guranshdeol/Invoice-Generator/issues/2#issuecomment-1793506021) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-4. ❗ Opened issue [#9718](https://github.com/EddieHubCommunity/BioDrop/issues/9718) in [EddieHubCommunity/BioDrop](https://github.com/EddieHubCommunity/BioDrop)
-5. 🗣 Commented on [#7](https://github.com/guranshdeol/Invoice-Generator/pull/7#issuecomment-1788497512) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+1. 🗣 Commented on [#38](https://github.com/pieces-app/example-ts/issues/38#issuecomment-1877443379) in [pieces-app/example-ts](https://github.com/pieces-app/example-ts)
+2. 🗣 Commented on [#38](https://github.com/pieces-app/example-ts/issues/38#issuecomment-1864875944) in [pieces-app/example-ts](https://github.com/pieces-app/example-ts)
+3. ❗ Opened issue [#8](https://github.com/guranshdeol/Invoice-Generator/issues/8) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+4. 🗣 Commented on [#2](https://github.com/guranshdeol/Invoice-Generator/issues/2#issuecomment-1793506021) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+5. ❗ Opened issue [#9718](https://github.com/EddieHubCommunity/BioDrop/issues/9718) in [EddieHubCommunity/BioDrop](https://github.com/EddieHubCommunity/BioDrop)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
