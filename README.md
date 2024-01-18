@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#38](https://github.com/pieces-app/example-ts/issues/38#issuecomment-1880092310) in [pieces-app/example-ts](https://github.com/pieces-app/example-ts)
-2. 🗣 Commented on [#38](https://github.com/pieces-app/example-ts/issues/38#issuecomment-1877443379) in [pieces-app/example-ts](https://github.com/pieces-app/example-ts)
-3. 🗣 Commented on [#38](https://github.com/pieces-app/example-ts/issues/38#issuecomment-1864875944) in [pieces-app/example-ts](https://github.com/pieces-app/example-ts)
-4. ❗ Opened issue [#8](https://github.com/guranshdeol/Invoice-Generator/issues/8) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
-5. 🗣 Commented on [#2](https://github.com/guranshdeol/Invoice-Generator/issues/2#issuecomment-1793506021) in [guranshdeol/Invoice-Generator](https://github.com/guranshdeol/Invoice-Generator)
+1. 🎉 Merged PR [#2](https://github.com/guranshdeol/admin-panel/pull/2) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+2. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879917) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+3. ❌ Closed PR [#1](https://github.com/guranshdeol/admin-panel/pull/1) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+4. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879064) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+5. 🗣 Commented on [#38](https://github.com/pieces-app/example-ts/issues/38#issuecomment-1880092310) in [pieces-app/example-ts](https://github.com/pieces-app/example-ts)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
