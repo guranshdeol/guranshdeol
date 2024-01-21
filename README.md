@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#2](https://github.com/guranshdeol/admin-panel/pull/2) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
-2. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879917) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
-3. ❌ Closed PR [#1](https://github.com/guranshdeol/admin-panel/pull/1) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
-4. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879064) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
-5. 🗣 Commented on [#38](https://github.com/pieces-app/example-ts/issues/38#issuecomment-1880092310) in [pieces-app/example-ts](https://github.com/pieces-app/example-ts)
+1. ❗ Opened issue [#19622](https://github.com/LeetCode-Feedback/LeetCode-Feedback/issues/19622) in [LeetCode-Feedback/LeetCode-Feedback](https://github.com/LeetCode-Feedback/LeetCode-Feedback)
+2. 🎉 Merged PR [#2](https://github.com/guranshdeol/admin-panel/pull/2) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+3. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879917) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+4. ❌ Closed PR [#1](https://github.com/guranshdeol/admin-panel/pull/1) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+5. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879064) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
