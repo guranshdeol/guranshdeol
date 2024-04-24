@@ -1,7 +1,7 @@
 [![](https://visitcount.itsvg.in/api?id=guranshdeol&icon=0&color=0)](https://visitcount.itsvg.in)
 ## 👋🏻Hello there! 
 
-Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for Open Source, Web Development, and DevOps. I believe in the power of open collaboration, actively contributing to open-source projects. Crafting seamless web experiences is my forte, and I navigate the DevOps landscape for efficient integration and deployment. Let's connect and innovate together! 🚀
+Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for Open Source, Web Development, Cloud and DevOps. I believe in the power of open collaboration, actively contributing to open-source projects. Crafting seamless web experiences is my forte, and I navigate the DevOps landscape for efficient integration and deployment. Let's connect and innovate together! 🚀
 
 [Let's Connect](https://bio.link/guranshdeol)
 
