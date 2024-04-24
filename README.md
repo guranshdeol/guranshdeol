@@ -33,7 +33,7 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. ❗ Opened issue [#19622](https://github.com/LeetCode-Feedback/LeetCode-Feedback/issues/19622) in [LeetCode-Feedback/LeetCode-Feedback](https://github.com/LeetCode-Feedback/LeetCode-Feedback)
+1. 💪 Opened PR [#2](https://github.com/vanshikakaushikkk/vkrepo/pull/2) in [vanshikakaushikkk/vkrepo](https://github.com/vanshikakaushikkk/vkrepo)
 2. 🎉 Merged PR [#2](https://github.com/guranshdeol/admin-panel/pull/2) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
 3. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879917) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
 4. ❌ Closed PR [#1](https://github.com/guranshdeol/admin-panel/pull/1) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
