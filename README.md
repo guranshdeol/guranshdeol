@@ -33,8 +33,8 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#2](https://github.com/vanshikakaushikkk/vkrepo/pull/2) in [vanshikakaushikkk/vkrepo](https://github.com/vanshikakaushikkk/vkrepo)
-2. 🎉 Merged PR [#2](https://github.com/guranshdeol/admin-panel/pull/2) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+1. ❗ Opened issue [#46](https://github.com/Omkar-Sonawane-23/Maa-Vimala/issues/46) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
+2. 💪 Opened PR [#2](https://github.com/vanshikakaushikkk/vkrepo/pull/2) in [vanshikakaushikkk/vkrepo](https://github.com/vanshikakaushikkk/vkrepo)
 3. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879917) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
 4. ❌ Closed PR [#1](https://github.com/guranshdeol/admin-panel/pull/1) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
 5. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879064) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
