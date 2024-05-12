@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#93](https://github.com/Omkar-Sonawane-23/Maa-Vimala/pull/93) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
-2. 🗣 Commented on [#46](https://github.com/Omkar-Sonawane-23/Maa-Vimala/issues/46#issuecomment-2105575984) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
-3. ❗ Opened issue [#46](https://github.com/Omkar-Sonawane-23/Maa-Vimala/issues/46) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
-4. 💪 Opened PR [#2](https://github.com/vanshikakaushikkk/vkrepo/pull/2) in [vanshikakaushikkk/vkrepo](https://github.com/vanshikakaushikkk/vkrepo)
-5. 🗣 Commented on [#1](https://github.com/guranshdeol/admin-panel/pull/1#issuecomment-1898879064) in [guranshdeol/admin-panel](https://github.com/guranshdeol/admin-panel)
+1. 💪 Opened PR [#110](https://github.com/Omkar-Sonawane-23/Maa-Vimala/pull/110) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
+2. 🗣 Commented on [#93](https://github.com/Omkar-Sonawane-23/Maa-Vimala/pull/93#issuecomment-2106116901) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
+3. ❌ Closed PR [#93](https://github.com/Omkar-Sonawane-23/Maa-Vimala/pull/93) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
+4. 💪 Opened PR [#93](https://github.com/Omkar-Sonawane-23/Maa-Vimala/pull/93) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
+5. 🗣 Commented on [#46](https://github.com/Omkar-Sonawane-23/Maa-Vimala/issues/46#issuecomment-2105575984) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
