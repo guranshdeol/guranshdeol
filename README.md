@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#3](https://github.com/guranshdeol/Attendance-GPT/pull/3) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
-2. 🎉 Merged PR [#2](https://github.com/guranshdeol/Attendance-GPT/pull/2) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
-3. 🎉 Merged PR [#1](https://github.com/guranshdeol/Face-recognition-attendance-system/pull/1) in [guranshdeol/Face-recognition-attendance-system](https://github.com/guranshdeol/Face-recognition-attendance-system)
-4. 🔒 Closed issue [#46](https://github.com/Omkar-Sonawane-23/Maa-Vimala/issues/46) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
-5. 💪 Opened PR [#110](https://github.com/Omkar-Sonawane-23/Maa-Vimala/pull/110) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
+1. 🎉 Merged PR [#4](https://github.com/guranshdeol/Attendance-GPT/pull/4) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
+2. 🎉 Merged PR [#3](https://github.com/guranshdeol/Attendance-GPT/pull/3) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
+3. 🎉 Merged PR [#2](https://github.com/guranshdeol/Attendance-GPT/pull/2) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
+4. 🎉 Merged PR [#1](https://github.com/guranshdeol/Face-recognition-attendance-system/pull/1) in [guranshdeol/Face-recognition-attendance-system](https://github.com/guranshdeol/Face-recognition-attendance-system)
+5. 🔒 Closed issue [#46](https://github.com/Omkar-Sonawane-23/Maa-Vimala/issues/46) in [Omkar-Sonawane-23/Maa-Vimala](https://github.com/Omkar-Sonawane-23/Maa-Vimala)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
