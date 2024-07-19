@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#1327](https://github.com/jfmartinz/ResourceHub/issues/1327#issuecomment-2178320981) in [jfmartinz/ResourceHub](https://github.com/jfmartinz/ResourceHub)
-2. ❗ Opened issue [#1327](https://github.com/jfmartinz/ResourceHub/issues/1327) in [jfmartinz/ResourceHub](https://github.com/jfmartinz/ResourceHub)
-3. 🎉 Merged PR [#5](https://github.com/guranshdeol/Attendance-GPT/pull/5) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
-4. 🎉 Merged PR [#4](https://github.com/guranshdeol/Attendance-GPT/pull/4) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
-5. 🎉 Merged PR [#3](https://github.com/guranshdeol/Attendance-GPT/pull/3) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
+1. 💪 Opened PR [#7](https://github.com/sanjay-kv/sanjay-kv/pull/7) in [sanjay-kv/sanjay-kv](https://github.com/sanjay-kv/sanjay-kv)
+2. 🗣 Commented on [#1327](https://github.com/jfmartinz/ResourceHub/issues/1327#issuecomment-2178320981) in [jfmartinz/ResourceHub](https://github.com/jfmartinz/ResourceHub)
+3. ❗ Opened issue [#1327](https://github.com/jfmartinz/ResourceHub/issues/1327) in [jfmartinz/ResourceHub](https://github.com/jfmartinz/ResourceHub)
+4. 🎉 Merged PR [#5](https://github.com/guranshdeol/Attendance-GPT/pull/5) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
+5. 🎉 Merged PR [#4](https://github.com/guranshdeol/Attendance-GPT/pull/4) in [guranshdeol/Attendance-GPT](https://github.com/guranshdeol/Attendance-GPT)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
