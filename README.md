@@ -33,10 +33,10 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. ❌ Closed PR [#7](https://github.com/sanjay-kv/sanjay-kv/pull/7) in [sanjay-kv/sanjay-kv](https://github.com/sanjay-kv/sanjay-kv)
-2. ❗ Opened issue [#1](https://github.com/code100x/job-board/issues/1) in [code100x/job-board](https://github.com/code100x/job-board)
-3. 💪 Opened PR [#7](https://github.com/sanjay-kv/sanjay-kv/pull/7) in [sanjay-kv/sanjay-kv](https://github.com/sanjay-kv/sanjay-kv)
-4. 🗣 Commented on [#1327](https://github.com/jfmartinz/ResourceHub/issues/1327#issuecomment-2178320981) in [jfmartinz/ResourceHub](https://github.com/jfmartinz/ResourceHub)
+1. 💪 Opened PR [#2726](https://github.com/zero-to-mastery/Animation-Nation/pull/2726) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
+2. ❌ Closed PR [#7](https://github.com/sanjay-kv/sanjay-kv/pull/7) in [sanjay-kv/sanjay-kv](https://github.com/sanjay-kv/sanjay-kv)
+3. ❗ Opened issue [#1](https://github.com/code100x/job-board/issues/1) in [code100x/job-board](https://github.com/code100x/job-board)
+4. 💪 Opened PR [#7](https://github.com/sanjay-kv/sanjay-kv/pull/7) in [sanjay-kv/sanjay-kv](https://github.com/sanjay-kv/sanjay-kv)
 5. ❗ Opened issue [#1327](https://github.com/jfmartinz/ResourceHub/issues/1327) in [jfmartinz/ResourceHub](https://github.com/jfmartinz/ResourceHub)
 <!--END_SECTION:activity-->
 
