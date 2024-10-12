@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408626378) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
-2. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408626162) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
-3. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408625702) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
-4. ❗ Opened issue [#96](https://github.com/Groverio/To-Do-List/issues/96) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
-5. 🗣 Commented on [#2726](https://github.com/zero-to-mastery/Animation-Nation/pull/2726#issuecomment-2408526614) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
+1. 💪 Opened PR [#99](https://github.com/Groverio/To-Do-List/pull/99) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
+2. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408626378) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
+3. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408626162) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
+4. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408625702) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
+5. ❗ Opened issue [#96](https://github.com/Groverio/To-Do-List/issues/96) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
