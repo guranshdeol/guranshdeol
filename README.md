@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#99](https://github.com/Groverio/To-Do-List/pull/99) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
-2. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408626378) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
-3. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408626162) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
-4. 🗣 Commented on [#96](https://github.com/Groverio/To-Do-List/issues/96#issuecomment-2408625702) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
-5. ❗ Opened issue [#96](https://github.com/Groverio/To-Do-List/issues/96) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
+1. ❌ Closed PR [#23](https://github.com/Arman-ali-khan-786/TexttoSpeech/pull/23) in [Arman-ali-khan-786/TexttoSpeech](https://github.com/Arman-ali-khan-786/TexttoSpeech)
+2. ❌ Closed PR [#28](https://github.com/Durgesh4993/web_Animation/pull/28) in [Durgesh4993/web_Animation](https://github.com/Durgesh4993/web_Animation)
+3. ❌ Closed PR [#433](https://github.com/Ananyasingh2002/Hacktoberfest2023/pull/433) in [Ananyasingh2002/Hacktoberfest2023](https://github.com/Ananyasingh2002/Hacktoberfest2023)
+4. ❌ Closed PR [#45](https://github.com/aaishikasb/ghw-demo/pull/45) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
+5. 💪 Opened PR [#99](https://github.com/Groverio/To-Do-List/pull/99) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
