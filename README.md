@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#2875](https://github.com/zero-to-mastery/Animation-Nation/pull/2875#issuecomment-2450099961) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
-2. 💪 Opened PR [#2875](https://github.com/zero-to-mastery/Animation-Nation/pull/2875) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
-3. 💪 Opened PR [#2872](https://github.com/zero-to-mastery/Animation-Nation/pull/2872) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
-4. ❌ Closed PR [#23](https://github.com/Arman-ali-khan-786/TexttoSpeech/pull/23) in [Arman-ali-khan-786/TexttoSpeech](https://github.com/Arman-ali-khan-786/TexttoSpeech)
-5. ❌ Closed PR [#28](https://github.com/Durgesh4993/web_Animation/pull/28) in [Durgesh4993/web_Animation](https://github.com/Durgesh4993/web_Animation)
+1. 🎉 Merged PR [#3](https://github.com/Open-Source-Chandigarh/Library-Management-System/pull/3) in [Open-Source-Chandigarh/Library-Management-System](https://github.com/Open-Source-Chandigarh/Library-Management-System)
+2. 💪 Opened PR [#3](https://github.com/Open-Source-Chandigarh/Library-Management-System/pull/3) in [Open-Source-Chandigarh/Library-Management-System](https://github.com/Open-Source-Chandigarh/Library-Management-System)
+3. 🗣 Commented on [#2875](https://github.com/zero-to-mastery/Animation-Nation/pull/2875#issuecomment-2450099961) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
+4. 💪 Opened PR [#2875](https://github.com/zero-to-mastery/Animation-Nation/pull/2875) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
+5. 💪 Opened PR [#2872](https://github.com/zero-to-mastery/Animation-Nation/pull/2872) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
