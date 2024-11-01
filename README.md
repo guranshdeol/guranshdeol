@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. ❌ Closed PR [#23](https://github.com/Arman-ali-khan-786/TexttoSpeech/pull/23) in [Arman-ali-khan-786/TexttoSpeech](https://github.com/Arman-ali-khan-786/TexttoSpeech)
-2. ❌ Closed PR [#28](https://github.com/Durgesh4993/web_Animation/pull/28) in [Durgesh4993/web_Animation](https://github.com/Durgesh4993/web_Animation)
-3. ❌ Closed PR [#433](https://github.com/Ananyasingh2002/Hacktoberfest2023/pull/433) in [Ananyasingh2002/Hacktoberfest2023](https://github.com/Ananyasingh2002/Hacktoberfest2023)
-4. ❌ Closed PR [#45](https://github.com/aaishikasb/ghw-demo/pull/45) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
-5. 💪 Opened PR [#99](https://github.com/Groverio/To-Do-List/pull/99) in [Groverio/To-Do-List](https://github.com/Groverio/To-Do-List)
+1. 💪 Opened PR [#2872](https://github.com/zero-to-mastery/Animation-Nation/pull/2872) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
+2. ❌ Closed PR [#23](https://github.com/Arman-ali-khan-786/TexttoSpeech/pull/23) in [Arman-ali-khan-786/TexttoSpeech](https://github.com/Arman-ali-khan-786/TexttoSpeech)
+3. ❌ Closed PR [#28](https://github.com/Durgesh4993/web_Animation/pull/28) in [Durgesh4993/web_Animation](https://github.com/Durgesh4993/web_Animation)
+4. ❌ Closed PR [#433](https://github.com/Ananyasingh2002/Hacktoberfest2023/pull/433) in [Ananyasingh2002/Hacktoberfest2023](https://github.com/Ananyasingh2002/Hacktoberfest2023)
+5. ❌ Closed PR [#45](https://github.com/aaishikasb/ghw-demo/pull/45) in [aaishikasb/ghw-demo](https://github.com/aaishikasb/ghw-demo)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
