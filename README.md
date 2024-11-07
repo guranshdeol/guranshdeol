@@ -22,7 +22,7 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 </p>
 
 ### 📛 BadgeBoard
-
+[![An image of @guranshdeol's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/guranshdeol)](https://holopin.io/@guranshdeol)
 
 
 
