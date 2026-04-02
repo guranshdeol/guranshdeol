@@ -11,8 +11,6 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: Readme-Workflows/recent-activity@v2.4.1
+      - uses: cxhello/github-activity-readme@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          GH_USERNAME: guranshdeol
