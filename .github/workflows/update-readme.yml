@@ -14,3 +14,5 @@ jobs:
       - uses: cxhello/github-activity-readme@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          FILTER_EVENTS: "PushEvent,CreateEvent,ForkEvent,WatchEvent,PullRequestEvent,IssuesEvent,IssueCommentEvent,ReleaseEvent"
