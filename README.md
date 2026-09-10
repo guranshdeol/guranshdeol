@@ -33,7 +33,7 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#3](https://github.com/Open-Source-Chandigarh/Library-Management-System/pull/3) in [Open-Source-Chandigarh/Library-Management-System](https://github.com/Open-Source-Chandigarh/Library-Management-System)
+1. 💪 Opened PR [#1](undefined) in [NX-SiddharthChadachal/NTNX-Infra-Topology](https://github.com/NX-SiddharthChadachal/NTNX-Infra-Topology)
 2. 💪 Opened PR [#3](https://github.com/Open-Source-Chandigarh/Library-Management-System/pull/3) in [Open-Source-Chandigarh/Library-Management-System](https://github.com/Open-Source-Chandigarh/Library-Management-System)
 3. 🗣 Commented on [#2875](https://github.com/zero-to-mastery/Animation-Nation/pull/2875#issuecomment-2450099961) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
 4. 💪 Opened PR [#2875](https://github.com/zero-to-mastery/Animation-Nation/pull/2875) in [zero-to-mastery/Animation-Nation](https://github.com/zero-to-mastery/Animation-Nation)
