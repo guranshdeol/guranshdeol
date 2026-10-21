@@ -33,11 +33,11 @@ Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for 
 -->
 ### :zap: Recent Activity
 <!--START_SECTION:activity-->
-1. ❌ Merged PR [#2](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-2. ❌ Merged PR [#3](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-3. 💪 Opened PR [#3](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-4. 💪 Opened PR [#2](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-5. ❌ Merged PR [#1](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
+1. ❌ Merged PR [#4](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
+2. 💪 Opened PR [#4](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
+3. ❌ Merged PR [#2](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
+4. ❌ Merged PR [#3](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
+5. 💪 Opened PR [#3](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
 <!--END_SECTION:activity-->
 
 ### ✍️ Dev Quote
