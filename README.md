@@ -11,7 +11,7 @@
   <picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=aws,docker,linux,py,powershell&perline=16&theme=light"/><img src="https://skillicons.dev/icons?i=aws,docker,linux,py,powershell&perline=16" alt="AWS, Docker, Linux, Python, PowerShell" height="56"/></picture>
 </p>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: light)" srcset="./assets/ai-light.svg"/><img src="./assets/ai-dark.svg" alt="Claude, Model Context Protocol, Ollama, Hugging Face" height="42"/></picture>
+  <picture><source media="(prefers-color-scheme: light)" srcset="./assets/ai-light.svg"/><img src="./assets/ai-dark.svg" alt="Claude, Model Context Protocol, ChatGPT, Cursor, Hermes Agent, Ollama, Hugging Face" height="42"/></picture>
 </p>
 <p align="center">
   <picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=kubernetes,bash,githubactions,fastapi,ts,react,nextjs,electron,cpp,mysql,raspberrypi&perline=16&theme=light"/><img src="https://skillicons.dev/icons?i=kubernetes,bash,githubactions,fastapi,ts,react,nextjs,electron,cpp,mysql,raspberrypi&perline=16" alt="Kubernetes, Bash, GitHub Actions, FastAPI, TypeScript, React, Next.js, Electron, C++, MySQL, Raspberry Pi" height="30"/></picture>
