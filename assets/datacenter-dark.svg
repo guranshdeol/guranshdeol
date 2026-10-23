@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="351" viewBox="-91.1 -253.3 789.7 322.3" role="img" aria-label="Isometric data centre: 7 racks of 35 servers with blinking status lights, a cable tray and patch cables carrying packets, plus a homelab bench with a Raspberry Pi cluster, a switch, a router and a DGX Spark.">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="351" viewBox="-91.1 -253.3 789.7 322.3" role="img" aria-label="Isometric data centre: 7 racks of 35 servers with blinking status lights, a cable tray and patch cables carrying packets, plus a homelab bench with a Raspberry Pi cluster, a switch, a router, a DGX Spark and a NAS.">
   <style>
     text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.95px; }
     .rack { opacity: 0; animation: up .6s ease-out forwards; }
@@ -10,6 +10,7 @@
   <rect x="-91.1" y="-253.3" width="789.7" height="322.3" rx="9.19" fill="#0d1117" stroke="#30363d" stroke-width="0.92"/>
   <text x="-74.5" y="-229.4" fill="#e6edf3" font-weight="700">dc-blr-01 · row A</text>
   <text x="-74.5" y="-212.8" fill="#8d96a0">7 racks · 35 nodes · <tspan fill="#3fb950">31 healthy</tspan> · <tspan fill="#d29922">4 warn</tspan> · homelab online</text>
+  
   <polygon points="-17.8,-4.2 684.0,-4.2 625.5,54.3 -76.3,54.3" fill="#161b22"/>
 <path d="M-17.8 -4.2L-76.3 54.3" fill="none" stroke="#21262d" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M4.2 -4.2L-54.3 54.3" fill="none" stroke="#21262d" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
@@ -422,37 +423,42 @@
 <circle r="2.6" fill="#e6edf3"><animateMotion dur="1.99s" begin="0.10s" repeatCount="indefinite" path="M382.1 -111.5L388.0 -101.5L394.0 -92.2L399.9 -84.2L405.9 -78.1L411.8 -74.3L417.8 -73.0L423.8 -74.3L429.7 -78.1L435.7 -84.2L441.6 -92.2L447.6 -101.5L453.6 -111.5"/></circle>
 <g><polygon points="541.6,8.4 540.0,10.0 540.0,-40.6 541.6,-42.2" fill="#32383f"/><polygon points="535.6,10.0 540.0,10.0 540.0,-40.6 535.6,-40.6" fill="#272c31"/><polygon points="537.2,-42.2 541.6,-42.2 540.0,-40.6 535.6,-40.6" fill="#444c56"/></g>
 <g><polygon points="651.6,8.4 650.0,10.0 650.0,-40.6 651.6,-42.2" fill="#32383f"/><polygon points="645.6,10.0 650.0,10.0 650.0,-40.6 645.6,-40.6" fill="#272c31"/><polygon points="647.2,-42.2 651.6,-42.2 650.0,-40.6 645.6,-40.6" fill="#444c56"/></g>
+<g><polygon points="627.9,13.4 610.4,30.9 610.4,-4.3 627.9,-21.8" fill="#1c2026"/><polygon points="581.8,30.9 610.4,30.9 610.4,-4.3 581.8,-4.3" fill="#16191d"/><polygon points="599.3,-21.8 627.9,-21.8 610.4,-4.3 581.8,-4.3" fill="#262c34"/></g>
+<polygon points="585.6,25.5 594.9,25.5 594.9,4.6 585.6,4.6" fill="#1f242b"/>
+<polygon points="597.1,25.5 606.5,25.5 606.5,4.6 597.1,4.6" fill="#1f242b"/>
+<circle cx="589.9" cy="0.8" r="1.2" fill="#4493f8" class="led" style="animation-duration:0.96s;animation-delay:0.25s"/>
+<circle cx="601.5" cy="0.8" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.68s;animation-delay:0.91s"/>
 <g><polygon points="518.2,31.8 516.6,33.4 516.6,-17.2 518.2,-18.8" fill="#32383f"/><polygon points="512.2,33.4 516.6,33.4 516.6,-17.2 512.2,-17.2" fill="#272c31"/><polygon points="513.8,-18.8 518.2,-18.8 516.6,-17.2 512.2,-17.2" fill="#444c56"/></g>
 <g><polygon points="628.2,31.8 626.6,33.4 626.6,-17.2 628.2,-18.8" fill="#32383f"/><polygon points="622.2,33.4 626.6,33.4 626.6,-17.2 622.2,-17.2" fill="#272c31"/><polygon points="623.8,-18.8 628.2,-18.8 626.6,-17.2 622.2,-17.2" fill="#444c56"/></g>
 <g><polygon points="654.9,-42.2 629.9,-17.2 629.9,-21.6 654.9,-46.6" fill="#5a4a33"/><polygon points="508.9,-17.2 629.9,-17.2 629.9,-21.6 508.9,-21.6" fill="#463a28"/><polygon points="533.9,-46.6 654.9,-46.6 629.9,-21.6 508.9,-21.6" fill="#7b6545"/></g>
 <g><polygon points="600.2,-42.5 592.6,-34.9 592.6,-41.5 600.2,-49.1" fill="#a5abb2"/><polygon points="566.2,-34.9 592.6,-34.9 592.6,-41.5 566.2,-41.5" fill="#81868b"/><polygon points="573.8,-49.1 600.2,-49.1 592.6,-41.5 566.2,-41.5" fill="#e1eaf3"/></g>
 <path d="M574.8 -45.7L574.8 -67.7" fill="none" stroke="#c9d1d9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M592.4 -45.7L592.4 -67.7" fill="none" stroke="#c9d1d9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="579.4" cy="-38.2" r="1.4" fill="#4493f8" class="led" style="animation-duration:0.96s;animation-delay:0.25s"/>
+<circle cx="579.4" cy="-38.2" r="1.4" fill="#4493f8" class="led" style="animation-duration:0.72s;animation-delay:0.28s"/>
 <g><polygon points="521.6,-24.9 520.9,-24.3 520.9,-74.9 521.6,-75.5" fill="#747b83"/><polygon points="519.3,-24.3 520.9,-24.3 520.9,-74.9 519.3,-74.9" fill="#5a6066"/><polygon points="519.9,-75.5 521.6,-75.5 520.9,-74.9 519.3,-74.9" fill="#9ea8b3"/></g>
 <g><polygon points="548.0,-24.9 547.3,-24.3 547.3,-74.9 548.0,-75.5" fill="#747b83"/><polygon points="545.7,-24.3 547.3,-24.3 547.3,-74.9 545.7,-74.9" fill="#5a6066"/><polygon points="546.3,-75.5 548.0,-75.5 547.3,-74.9 545.7,-74.9" fill="#9ea8b3"/></g>
 <g><polygon points="556.3,-35.4 548.8,-27.9 548.8,-30.3 556.3,-37.9" fill="#196430"/><polygon points="518.0,-27.9 548.8,-27.9 548.8,-30.3 518.0,-30.3" fill="#144e25"/><polygon points="525.5,-37.9 556.3,-37.9 548.8,-30.3 518.0,-30.3" fill="#238941"/></g>
 <g><polygon points="529.0,-30.3 528.3,-29.7 528.3,-32.8 529.0,-33.4" fill="#8e99a3"/><polygon points="520.6,-29.7 528.3,-29.7 528.3,-32.8 520.6,-32.8" fill="#6f777f"/><polygon points="521.3,-33.4 529.0,-33.4 528.3,-32.8 520.6,-32.8" fill="#c2d0df"/></g>
-<circle cx="538.9" cy="-29.1" r="1.2" fill="#f85149" class="led" style="animation-duration:1.68s;animation-delay:0.91s"/>
-<circle cx="544.4" cy="-29.1" r="1.2" fill="#3fb950" class="led" style="animation-duration:0.72s;animation-delay:0.28s"/>
+<circle cx="538.9" cy="-29.1" r="1.2" fill="#f85149" class="led" style="animation-duration:1.60s;animation-delay:1.14s"/>
+<circle cx="544.4" cy="-29.1" r="1.2" fill="#3fb950" class="led" style="animation-duration:0.59s;animation-delay:1.08s"/>
 <g><polygon points="556.3,-47.5 548.8,-40.0 548.8,-42.4 556.3,-50.0" fill="#196430"/><polygon points="518.0,-40.0 548.8,-40.0 548.8,-42.4 518.0,-42.4" fill="#144e25"/><polygon points="525.5,-50.0 556.3,-50.0 548.8,-42.4 518.0,-42.4" fill="#238941"/></g>
 <g><polygon points="529.0,-42.4 528.3,-41.8 528.3,-44.9 529.0,-45.5" fill="#8e99a3"/><polygon points="520.6,-41.8 528.3,-41.8 528.3,-44.9 520.6,-44.9" fill="#6f777f"/><polygon points="521.3,-45.5 529.0,-45.5 528.3,-44.9 520.6,-44.9" fill="#c2d0df"/></g>
-<circle cx="538.9" cy="-41.2" r="1.2" fill="#f85149" class="led" style="animation-duration:1.60s;animation-delay:1.14s"/>
-<circle cx="544.4" cy="-41.2" r="1.2" fill="#3fb950" class="led" style="animation-duration:0.59s;animation-delay:1.08s"/>
+<circle cx="538.9" cy="-41.2" r="1.2" fill="#f85149" class="led" style="animation-duration:0.86s;animation-delay:0.10s"/>
+<circle cx="544.4" cy="-41.2" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.02s;animation-delay:0.35s"/>
 <g><polygon points="556.3,-59.6 548.8,-52.1 548.8,-54.5 556.3,-62.1" fill="#196430"/><polygon points="518.0,-52.1 548.8,-52.1 548.8,-54.5 518.0,-54.5" fill="#144e25"/><polygon points="525.5,-62.1 556.3,-62.1 548.8,-54.5 518.0,-54.5" fill="#238941"/></g>
 <g><polygon points="529.0,-54.5 528.3,-53.9 528.3,-57.0 529.0,-57.6" fill="#8e99a3"/><polygon points="520.6,-53.9 528.3,-53.9 528.3,-57.0 520.6,-57.0" fill="#6f777f"/><polygon points="521.3,-57.6 529.0,-57.6 528.3,-57.0 520.6,-57.0" fill="#c2d0df"/></g>
-<circle cx="538.9" cy="-53.3" r="1.2" fill="#f85149" class="led" style="animation-duration:0.86s;animation-delay:0.10s"/>
-<circle cx="544.4" cy="-53.3" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.02s;animation-delay:0.35s"/>
+<circle cx="538.9" cy="-53.3" r="1.2" fill="#f85149" class="led" style="animation-duration:1.21s;animation-delay:0.73s"/>
+<circle cx="544.4" cy="-53.3" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.66s;animation-delay:0.09s"/>
 <g><polygon points="556.3,-71.7 548.8,-64.2 548.8,-66.6 556.3,-74.2" fill="#196430"/><polygon points="518.0,-64.2 548.8,-64.2 548.8,-66.6 518.0,-66.6" fill="#144e25"/><polygon points="525.5,-74.2 556.3,-74.2 548.8,-66.6 518.0,-66.6" fill="#238941"/></g>
 <g><polygon points="529.0,-66.6 528.3,-66.0 528.3,-69.1 529.0,-69.7" fill="#8e99a3"/><polygon points="520.6,-66.0 528.3,-66.0 528.3,-69.1 520.6,-69.1" fill="#6f777f"/><polygon points="521.3,-69.7 529.0,-69.7 528.3,-69.1 520.6,-69.1" fill="#c2d0df"/></g>
-<circle cx="538.9" cy="-65.4" r="1.2" fill="#f85149" class="led" style="animation-duration:1.21s;animation-delay:0.73s"/>
-<circle cx="544.4" cy="-65.4" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.66s;animation-delay:0.09s"/>
+<circle cx="538.9" cy="-65.4" r="1.2" fill="#f85149" class="led" style="animation-duration:0.84s;animation-delay:1.39s"/>
+<circle cx="544.4" cy="-65.4" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.56s;animation-delay:0.37s"/>
 <g><polygon points="591.5,-31.6 582.7,-22.8 582.7,-30.5 591.5,-39.3" fill="#272c32"/><polygon points="553.0,-22.8 582.7,-22.8 582.7,-30.5 553.0,-30.5" fill="#1f2327"/><polygon points="561.8,-39.3 591.5,-39.3 582.7,-30.5 553.0,-30.5" fill="#363c44"/></g>
-<circle cx="557.4" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:0.84s;animation-delay:1.39s"/>
-<circle cx="562.9" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.56s;animation-delay:0.37s"/>
-<circle cx="568.4" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.12s;animation-delay:0.72s"/>
-<circle cx="573.9" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.45s;animation-delay:0.24s"/>
-<circle cx="579.4" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:0.83s;animation-delay:0.49s"/>
+<circle cx="557.4" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.12s;animation-delay:0.72s"/>
+<circle cx="562.9" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:1.45s;animation-delay:0.24s"/>
+<circle cx="568.4" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:0.83s;animation-delay:0.49s"/>
+<circle cx="573.9" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:0.83s;animation-delay:1.01s"/>
+<circle cx="579.4" cy="-26.7" r="1.2" fill="#3fb950" class="led" style="animation-duration:0.84s;animation-delay:0.41s"/>
 <g><polygon points="637.5,-35.8 624.5,-22.8 624.5,-37.1 637.5,-50.1" fill="#977730"/><polygon points="589.3,-22.8 624.5,-22.8 624.5,-37.1 589.3,-37.1" fill="#765d25"/><polygon points="602.3,-50.1 637.5,-50.1 624.5,-37.1 589.3,-37.1" fill="#cea241"/></g>
 <path d="M593.1 -25.5L593.1 -34.3" fill="none" stroke="#6b5220" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M598.1 -25.5L598.1 -34.3" fill="none" stroke="#6b5220" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -460,10 +466,11 @@
 <path d="M608.0 -25.5L608.0 -34.3" fill="none" stroke="#6b5220" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M612.9 -25.5L612.9 -34.3" fill="none" stroke="#6b5220" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M617.9 -25.5L617.9 -34.3" fill="none" stroke="#6b5220" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="621.2" cy="-29.9" r="1.4" fill="#3fb950" class="led" style="animation-duration:0.83s;animation-delay:1.01s"/>
+<circle cx="621.2" cy="-29.9" r="1.4" fill="#3fb950" class="led" style="animation-duration:0.62s;animation-delay:0.11s"/>
 <path d="M528.3 -38.8L533.2 -32.4L538.0 -27.2L542.9 -24.0L547.7 -23.1L552.6 -24.3L557.4 -26.7" fill="none" stroke="#4493f8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M528.3 -63.0L534.1 -50.4L539.9 -39.5L545.6 -31.7L551.4 -27.4L557.2 -26.1L562.9 -26.7" fill="none" stroke="#db61a2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M579.4 -26.7L581.6 -23.3L583.8 -20.8L586.0 -19.8L588.2 -20.6L590.4 -22.9L592.6 -26.1" fill="none" stroke="#d29922" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M573.9 -26.7L564.9 -14.6L555.9 -3.2L546.8 7.0L537.8 15.5L528.8 22.0L519.8 26.1L510.8 27.8L501.7 27.2L492.7 24.6L483.7 20.2L474.7 14.6L465.7 8.4" fill="none" stroke="#3fb950" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="513.3" y="-87.6" fill="#8d96a0">homelab · 4× pi · dgx spark</text>
+<path d="M605.9 13.4L601.3 3.4L596.7 -5.7L592.1 -13.2L587.5 -19.0L582.9 -23.3L578.3 -26.7" fill="none" stroke="#d29922" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="513.3" y="-87.6" fill="#8d96a0">homelab</text>
 </svg>

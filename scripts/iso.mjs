@@ -56,7 +56,8 @@ export function createScene(scale = 10, proj = isometric()) {
 
 // Wraps a scene in a card that renders at 860px wide with the same 13px captions, 10px corners and
 // 1px border as the health-check terminal, whatever the scene's own scale is.
-export function card(scene, { bg, border, title, text }, titleHtml, captionHtml, css = "", label = "") {
+// `corner({ right, top, k })` may return extra SVG for the header's right side (k = viewBox units per px).
+export function card(scene, { bg, border, title, text }, titleHtml, captionHtml, css = "", label = "", corner = null) {
   const W = 860;
   const raw = scene.bounds(0);
   const k = (raw.w * 1.04) / W; // viewBox units per rendered px
@@ -68,11 +69,12 @@ export function card(scene, { bg, border, title, text }, titleHtml, captionHtml,
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="${vb.join(" ")}" role="img" aria-label="${label}">
   <style>
     text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: ${(13 * k).toFixed(2)}px; }
-    ${css}
+    ${typeof css === "function" ? css(k) : css}
   </style>
   <rect x="${vb[0]}" y="${vb[1]}" width="${vb[2]}" height="${vb[3]}" rx="${(10 * k).toFixed(2)}" fill="${bg}" stroke="${border}" stroke-width="${k.toFixed(2)}"/>
   <text x="${x}" y="${(b.y - head + 26 * k).toFixed(1)}" fill="${title}" font-weight="700">${titleHtml}</text>
   <text x="${x}" y="${(b.y - head + 44 * k).toFixed(1)}" fill="${text}">${captionHtml}</text>
+  ${corner ? corner({ right: b.x + b.w - 18 * k, top: b.y - head, k }) : ""}
   ${scene.toString()}
 </svg>
 `;

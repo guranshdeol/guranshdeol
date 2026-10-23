@@ -19,10 +19,10 @@ const rackX = (r) => r * (RW + GAP);
 const rowW = rackX(RACKS - 1) + RW;
 
 const THEMES = {
-  dark: { bg: "#0d1117", border: "#30363d", bench: "#3d444d", benchTop: "#6e5a3e", router: "#c9d1d9", standoff: "#8d96a0", pi: "#1f7a3a", port: "#adbac7", gold: "#b8913a", grille: "#6b5220", red: "#f85149", floor: "#161b22", grid: "#21262d", tile: "#1c2a3a", rack: "#2d333b", server: "#444c56", bezel: "#1f242b",
+  dark: { bg: "#0d1117", border: "#30363d", nas: "#22272e", bench: "#3d444d", benchTop: "#6e5a3e", router: "#c9d1d9", standoff: "#8d96a0", pi: "#1f7a3a", port: "#adbac7", gold: "#b8913a", grille: "#6b5220", red: "#f85149", floor: "#161b22", grid: "#21262d", tile: "#1c2a3a", rack: "#2d333b", server: "#444c56", bezel: "#1f242b",
     switch: "#30363d", tray: "#57606a", text: "#8d96a0", title: "#e6edf3", ok: "#3fb950", warn: "#d29922", info: "#4493f8",
     cables: ["#4493f8", "#d29922", "#db61a2", "#3fb950"] },
-  light: { bg: "#ffffff", border: "#d1d9e0", bench: "#8c959f", benchTop: "#b08a5a", router: "#eaeef2", standoff: "#8c959f", pi: "#2da44e", port: "#d0d7de", gold: "#c9a24a", grille: "#7a5c1e", red: "#cf222e", floor: "#eef1f4", grid: "#d8dee4", tile: "#dbe9f7", rack: "#8c959f", server: "#afb8c1", bezel: "#57606a",
+  light: { bg: "#ffffff", border: "#d1d9e0", nas: "#6e7781", bench: "#8c959f", benchTop: "#b08a5a", router: "#eaeef2", standoff: "#8c959f", pi: "#2da44e", port: "#d0d7de", gold: "#c9a24a", grille: "#7a5c1e", red: "#cf222e", floor: "#eef1f4", grid: "#d8dee4", tile: "#dbe9f7", rack: "#8c959f", server: "#afb8c1", bezel: "#57606a",
     switch: "#8c959f", tray: "#afb8c1", text: "#59636e", title: "#1f2328", ok: "#1a7f37", warn: "#9a6700", info: "#0969da",
     cables: ["#0969da", "#bf8700", "#bf3989", "#1a7f37"] },
 };
@@ -48,6 +48,12 @@ function homelab(s, C) {
 
   // bench: back legs, front legs, then the top
   for (const lx of [LAB + 0.3, LAB + LAB_W - 0.7]) s.box(lx, 2, 0, lx + 0.4, 2.4, BENCH, C.bench);
+  // 2-bay NAS on the floor under the bench, drawn before the front legs that stand in front of it
+  const nx = LAB + 6.4;
+  s.box(nx, 3.2, 0, nx + 2.6, RD - 0.6, 3.2, C.nas);
+  for (let b = 0; b < 2; b++) s.quad([[nx + 0.35 + b * 1.05, RD - 0.59, 0.5], [nx + 1.2 + b * 1.05, RD - 0.59, 0.5], [nx + 1.2 + b * 1.05, RD - 0.59, 2.4], [nx + 0.35 + b * 1.05, RD - 0.59, 2.4]], C.bezel);
+  blink([nx + 0.75, RD - 0.58, 2.75], C.info, 1.2);
+  blink([nx + 1.8, RD - 0.58, 2.75], C.ok, 1.2);
   for (const lx of [LAB + 0.3, LAB + LAB_W - 0.7]) s.box(lx, RD - 0.4, 0, lx + 0.4, RD, BENCH, C.bench);
   s.box(LAB, 2, BENCH, LAB + LAB_W, RD, BENCH + 0.4, C.benchTop);
   const top = BENCH + 0.4;
@@ -83,10 +89,12 @@ function homelab(s, C) {
   s.path(sag([px + 1, py + 1.95, top + 3.6], [LAB + 4.8, RD - 0.3, top + 0.35], 1.2, 6), C.cables[2], 1.6);
   s.path(sag([LAB + 6.3, RD - 0.3, top + 0.35], [dx + 0.3, RD - 0.3, top + 0.3], 0.6, 6), C.cables[1], 1.6);
   s.path(sag([LAB + 5.8, RD - 0.3, top + 0.35], [rowW - 1.2, RD + 0.6, 2.5], 3.2, 12), C.cables[3], 2);
+  // NAS up to the switch
+  s.path(sag([nx + 2.2, RD - 0.58, 1.6], [LAB + 6.2, RD - 0.3, top + 0.35], -0.6, 6), C.cables[1], 1.6);
 
   // label above the bench
   const [lx, ly] = s.project(LAB + 0.4, RD, top + 6);
-  s.raw(`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" fill="${C.text}">homelab · 4× pi · dgx spark</text>`);
+  s.raw(`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" fill="${C.text}">homelab</text>`);
 }
 
 function svg(themeName) {
@@ -164,7 +172,7 @@ function svg(themeName) {
   return card(s, { bg: C.bg, border: C.border, title: C.title, text: C.text },
     "dc-blr-01 · row A",
     `${RACKS} racks · ${nodes} nodes · <tspan fill="${C.ok}">${nodes - warnings} healthy</tspan> · <tspan fill="${C.warn}">${warnings} warn</tspan> · homelab online`,
-    css, `Isometric data centre: ${RACKS} racks of ${nodes} servers with blinking status lights, a cable tray and patch cables carrying packets, plus a homelab bench with a Raspberry Pi cluster, a switch, a router and a DGX Spark.`);
+    css, `Isometric data centre: ${RACKS} racks of ${nodes} servers with blinking status lights, a cable tray and patch cables carrying packets, plus a homelab bench with a Raspberry Pi cluster, a switch, a router, a DGX Spark and a NAS.`);
 }
 
 for (const theme of Object.keys(THEMES)) writeFileSync(new URL(`../assets/datacenter-${theme}.svg`, import.meta.url), svg(theme));

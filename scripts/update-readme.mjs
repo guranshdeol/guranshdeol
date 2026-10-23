@@ -183,13 +183,35 @@ function topologySvg(cal, theme) {
     const color = { ...shades(C.cells[level(c)]), stroke: C.edge };
     s.box(x * 1.2, y * 1.2, 0, x * 1.2 + 1, y * 1.2 + 1, h, color, c ? ` class="b" style="animation-delay:${(x * 0.04).toFixed(2)}s"` : "");
   }
+  // month names along the front edge, at the first week of each month (skipping one squeezed against the start)
+  let lastMonth = null;
+  cal.weeks.forEach((w, x) => {
+    const month = w.contributionDays[0]?.date?.slice(0, 7);
+    if (!month || month === lastMonth) return;
+    lastMonth = month;
+    if (x === 0 && cal.weeks[2]?.contributionDays[0]?.date?.slice(0, 7) !== month) return;
+    const [mx, my] = s.project(x * 1.2, 7 * 1.2 + 0.9, 0);
+    const name = new Date(`${month}-15T00:00:00Z`).toLocaleDateString("en-US", { month: "short", timeZone: "UTC" });
+    s.raw(`<text x="${mx.toFixed(1)}" y="${(my + 4).toFixed(1)}" fill="${C.text}" class="m">${name}</text>`);
+  });
+
+  // GitHub's "less ▢▢▢▢▢ more" key in the header's right corner
+  const legend = ({ right, top, k }) => {
+    const sq = 10 * k, gap = 3 * k, y = top + 34 * k;
+    const moreW = 30 * k, lessW = 30 * k;
+    const x0 = right - moreW - 5 * (sq + gap) - lessW;
+    const boxes = C.cells.map((c, i) => `<rect x="${(x0 + lessW + i * (sq + gap)).toFixed(1)}" y="${(y - sq + 1 * k).toFixed(1)}" width="${sq.toFixed(1)}" height="${sq.toFixed(1)}" rx="${(2 * k).toFixed(2)}" fill="${c}" stroke="${C.border}" stroke-width="${(0.5 * k).toFixed(2)}"/>`).join("");
+    return `<text x="${(x0 + lessW - 5 * k).toFixed(1)}" y="${y.toFixed(1)}" fill="${C.text}" text-anchor="end">less</text>${boxes}<text x="${(right - moreW + 5 * k).toFixed(1)}" y="${y.toFixed(1)}" fill="${C.text}">more</text>`;
+  };
+
   const busiest = cal.weeks.flatMap((w) => w.contributionDays).reduce((a, b) => (b.contributionCount > a.contributionCount ? b : a));
-  const css = `.b { transform-box: fill-box; transform-origin: 50% 100%; animation: rise .7s cubic-bezier(.2,.8,.3,1.2) both; }
+  const css = (k) => `.b { transform-box: fill-box; transform-origin: 50% 100%; animation: rise .7s cubic-bezier(.2,.8,.3,1.2) both; }
+    .m { font-size: ${(11 * k).toFixed(2)}px; }
     @keyframes rise { from { transform: scaleY(0); } }
     @media (prefers-reduced-motion: reduce) { .b { animation: none; } }`;
   return card(s, C, `${cal.totalContributions} contributions · last 12 months`,
     `peak <tspan fill="${C.accent}">${busiest.contributionCount}</tspan> on ${busiest.date}`,
-    css, `Isometric contribution skyline: ${cal.totalContributions} contributions in the last year.`);
+    css, `Isometric contribution skyline: ${cal.totalContributions} contributions in the last year.`, legend);
 }
 
 // Changes once a week. The uptime line and the rolling calendar still give about one commit a day.

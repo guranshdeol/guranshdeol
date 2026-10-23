@@ -7,11 +7,14 @@
 ### `$ lsmod`
 
 <p align="center">
-  <img src="./assets/nutanix.svg" alt="Nutanix" height="56"/>
+  <picture><source media="(prefers-color-scheme: light)" srcset="./assets/nutanix-light.svg"/><img src="./assets/nutanix-dark.svg" alt="Nutanix" height="56"/></picture>
   <picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=aws,docker,linux,py,powershell&perline=16&theme=light"/><img src="https://skillicons.dev/icons?i=aws,docker,linux,py,powershell&perline=16" alt="AWS, Docker, Linux, Python, PowerShell" height="56"/></picture>
 </p>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=bash,githubactions,fastapi,ts,react,nextjs,electron,cpp,mysql,raspberrypi&perline=16&theme=light"/><img src="https://skillicons.dev/icons?i=bash,githubactions,fastapi,ts,react,nextjs,electron,cpp,mysql,raspberrypi&perline=16" alt="Bash, GitHub Actions, FastAPI, TypeScript, React, Next.js, Electron, C++, MySQL, Raspberry Pi" height="30"/></picture>
+  <picture><source media="(prefers-color-scheme: light)" srcset="./assets/ai-light.svg"/><img src="./assets/ai-dark.svg" alt="Claude, Model Context Protocol, Ollama, Hugging Face" height="42"/></picture>
+</p>
+<p align="center">
+  <picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=kubernetes,bash,githubactions,fastapi,ts,react,nextjs,electron,cpp,mysql,raspberrypi&perline=16&theme=light"/><img src="https://skillicons.dev/icons?i=kubernetes,bash,githubactions,fastapi,ts,react,nextjs,electron,cpp,mysql,raspberrypi&perline=16" alt="Kubernetes, Bash, GitHub Actions, FastAPI, TypeScript, React, Next.js, Electron, C++, MySQL, Raspberry Pi" height="30"/></picture>
 </p>
 
 ### `$ tail activity.log`
