@@ -115,7 +115,37 @@ async function activity() {
     .join("\n");
 }
 
+// The public calendar page counts private contributions too (when "Private contributions" is on in the
+// profile settings), which the API doesn't give the workflow's token. Falls back to GraphQL.
+async function publicCalendar() {
+  try {
+    const html = await text(`https://github.com/users/${USER}/contributions`);
+    const counts = new Map();
+    for (const [, id, label] of html.matchAll(/<tool-tip[^>]*\bfor="(contribution-day-component-\d+-\d+)"[^>]*>([^<]*)<\/tool-tip>/g)) {
+      counts.set(id, /^No contributions/.test(label) ? 0 : parseInt(label.replace(/,/g, ""), 10));
+    }
+    const weeks = [];
+    for (const [, attrs] of html.matchAll(/<td([^>]*class="ContributionCalendar-day"[^>]*)>/g)) {
+      const date = attrs.match(/data-date="([^"]+)"/)?.[1];
+      const id = attrs.match(/id="(contribution-day-component-(\d+)-(\d+))"/);
+      if (!date || !id || !counts.has(id[1]) || Number.isNaN(counts.get(id[1]))) continue;
+      const [dow, week] = [+id[2], +id[3]];
+      (weeks[week] ??= { contributionDays: [] }).contributionDays[dow] = { date, contributionCount: counts.get(id[1]) };
+    }
+    const days = weeks.flatMap((w) => w?.contributionDays.filter(Boolean) ?? []);
+    if (days.length < 300) return null;
+    return {
+      totalContributions: days.reduce((sum, d) => sum + d.contributionCount, 0),
+      weeks: weeks.filter(Boolean).map((w) => ({ contributionDays: w.contributionDays.filter(Boolean) })),
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function calendar() {
+  const fromPage = await publicCalendar();
+  if (fromPage) return fromPage;
   if (!token) return null;
   const query = `query { user(login: "${USER}") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }`;
   // A failed call keeps the last topology instead of failing the whole run

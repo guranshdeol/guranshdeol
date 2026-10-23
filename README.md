@@ -1,5 +1,9 @@
 <a href="https://guranshdeol.tech"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/health-check-light.svg"/><img src="./assets/health-check-dark.svg" alt="Guransh Deol. Health check: Consultant at Nutanix. NCM-MCI, 10× Nutanix certified. From Punjab, working in Bengaluru. Open to opportunities." width="100%"/></picture></a>
 
+### `$ ssh dc-blr-01`
+
+<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables." width="60%"/></picture></p>
+
 ### `$ ncc stats`
 
 <p align="center">
@@ -30,10 +34,6 @@
 4. 🎥 Uploaded [Build Your Own MCP Server in 5 Minutes (Python + Claude Code)](https://www.youtube.com/watch?v=k7Tv0l51UUs)
 5. 🎥 Uploaded [What Is an MCP Server? Set Up Your First One in Claude Code (Beginner's Guide)](https://www.youtube.com/watch?v=_a7QyIm6HGo)
 <!-- ACTIVITY:END -->
-
-### `$ ssh dc-blr-01`
-
-<picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables." width="100%"/></picture>
 
 <!-- Holopin board, turned off for now. Remove the comment markers to bring it back.
 ### `$ ls ~/badges`

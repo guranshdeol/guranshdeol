@@ -37,8 +37,10 @@ function uptime(now = new Date()) {
 }
 
 // Timeline, in seconds
-const T = { banner: 2.2, subtitle: 1.6, gap: 0.5, command: 3.0, step: 1.2 };
-const subtitleAt = T.banner + 0.2;
+// The name and the subtitle each appear whole (a short fade), one after the other
+const T = { banner: 0.6, subtitle: 0.6, gap: 0.5, command: 3.0, step: 1.2 };
+const bannerAt = 0.2;
+const subtitleAt = bannerAt + T.banner + 0.4;
 const windowAt = subtitleAt + T.subtitle + T.gap;
 const commandAt = windowAt + 0.4;
 const linesAt = commandAt + T.command + 0.3;
@@ -142,8 +144,8 @@ function build(video, theme) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Guransh Deol. Health check: Consultant at Nutanix. NCM-MCI, 10 Nutanix certifications. From Punjab, working in Bengaluru. Latest video: ${esc(video)}. Open to opportunities.">
   <style>
     text { font: 14px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; fill: ${C.fg}; white-space: pre; }
-    .banner { clip-path: inset(0 100% 0 0); animation: wipe ${T.banner}s steps(${Math.max(...BANNER.map((r) => r.length))}) forwards; }
-    .sub { clip-path: inset(0 100% 0 0); animation: wipe ${T.subtitle}s steps(${SUBTITLE.length}) ${subtitleAt}s forwards; }
+    .banner { opacity: 0; animation: show ${T.banner}s ease-out ${bannerAt}s forwards; }
+    .sub { opacity: 0; animation: show ${T.subtitle}s ease-out ${subtitleAt}s forwards; }
     .win { opacity: 0; transform: translateY(8px); animation: rise .5s ease-out ${windowAt}s forwards; }
     .ln { opacity: 0; animation: show .25s ease-out forwards; }
     .cmd { clip-path: inset(0 100% 0 0); animation: wipe ${T.command}s steps(58) forwards; }
@@ -153,8 +155,8 @@ function build(video, theme) {
     @keyframes rise { to { opacity: 1; transform: none; } }
     @keyframes blink { 50% { opacity: 0; } }
     @media (prefers-reduced-motion: reduce) {
-      .banner, .sub, .cmd { clip-path: none; animation: none; }
-      .win, .ln, .cursor { opacity: 1; transform: none; animation: none; }
+      .cmd { clip-path: none; animation: none; }
+      .banner, .sub, .win, .ln, .cursor { opacity: 1; transform: none; animation: none; }
     }
   </style>
   <g class="banner">${banner((W - bannerW) / 2, bannerY, cw, ch)}</g>
