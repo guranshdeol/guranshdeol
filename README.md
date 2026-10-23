@@ -4,17 +4,6 @@
 
 <picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables." width="100%"/></picture>
 
-### `$ ncc stats`
-
-<p align="center">
-  <picture><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&custom_title=ncc%20stats%20%C2%B7%20guranshdeol&border_radius=10&bg_color=ffffff&title_color=1a7f37&text_color=1f2328&icon_color=1a7f37&ring_color=1a7f37&border_color=d1d9e0"/><img width="49%" src="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&custom_title=ncc%20stats%20%C2%B7%20guranshdeol&border_radius=10&bg_color=0d1117&title_color=3fb950&text_color=e6edf3&icon_color=3fb950&ring_color=3fb950&border_color=30363d" alt="GitHub stats"/></picture>
-  <picture><source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&border_radius=10&background=ffffff&border=d1d9e0&stroke=d1d9e0&ring=1a7f37&fire=1a7f37&currStreakNum=1a7f37&currStreakLabel=1a7f37&sideNums=1f2328&sideLabels=59636e&dates=59636e"/><img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&border_radius=10&background=0d1117&border=30363d&stroke=30363d&ring=3fb950&fire=3fb950&currStreakNum=3fb950&currStreakLabel=3fb950&sideNums=e6edf3&sideLabels=8d96a0&dates=8d96a0" alt="Contribution streak"/></picture>
-</p>
-
-### `$ ncc topology`
-
-<picture><source media="(prefers-color-scheme: light)" srcset="./assets/topology-light.svg"/><img src="./assets/topology-dark.svg" alt="Isometric contribution skyline." width="100%"/></picture>
-
 ### `$ lsmod`
 
 <p align="center">
@@ -34,6 +23,17 @@
 4. 🎥 Uploaded [Build Your Own MCP Server in 5 Minutes (Python + Claude Code)](https://www.youtube.com/watch?v=k7Tv0l51UUs)
 5. 🎥 Uploaded [What Is an MCP Server? Set Up Your First One in Claude Code (Beginner's Guide)](https://www.youtube.com/watch?v=_a7QyIm6HGo)
 <!-- ACTIVITY:END -->
+
+### `$ ncc stats`
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&custom_title=ncc%20stats%20%C2%B7%20guranshdeol&border_radius=10&bg_color=ffffff&title_color=1a7f37&text_color=1f2328&icon_color=1a7f37&ring_color=1a7f37&border_color=d1d9e0"/><img width="49%" src="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&custom_title=ncc%20stats%20%C2%B7%20guranshdeol&border_radius=10&bg_color=0d1117&title_color=3fb950&text_color=e6edf3&icon_color=3fb950&ring_color=3fb950&border_color=30363d" alt="GitHub stats"/></picture>
+  <picture><source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&border_radius=10&background=ffffff&border=d1d9e0&stroke=d1d9e0&ring=1a7f37&fire=1a7f37&currStreakNum=1a7f37&currStreakLabel=1a7f37&sideNums=1f2328&sideLabels=59636e&dates=59636e"/><img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&border_radius=10&background=0d1117&border=30363d&stroke=30363d&ring=3fb950&fire=3fb950&currStreakNum=3fb950&currStreakLabel=3fb950&sideNums=e6edf3&sideLabels=8d96a0&dates=8d96a0" alt="Contribution streak"/></picture>
+</p>
+
+### `$ ncc topology`
+
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/topology-light.svg"/><img src="./assets/topology-dark.svg" alt="Isometric contribution skyline." width="100%"/></picture>
 
 <!-- Holopin board, turned off for now. Remove the comment markers to bring it back.
 ### `$ ls ~/badges`

@@ -19,10 +19,10 @@ const rackX = (r) => r * (RW + GAP);
 const rowW = rackX(RACKS - 1) + RW;
 
 const THEMES = {
-  dark: { bg: "#0d1117", border: "#30363d", floor: "#161b22", grid: "#21262d", tile: "#1c2a3a", rack: "#2d333b", server: "#444c56", bezel: "#1f242b",
+  dark: { bg: "#0d1117", border: "#30363d", bench: "#3d444d", benchTop: "#6e5a3e", router: "#c9d1d9", standoff: "#8d96a0", pi: "#1f7a3a", port: "#adbac7", gold: "#b8913a", grille: "#6b5220", red: "#f85149", floor: "#161b22", grid: "#21262d", tile: "#1c2a3a", rack: "#2d333b", server: "#444c56", bezel: "#1f242b",
     switch: "#30363d", tray: "#57606a", text: "#8d96a0", title: "#e6edf3", ok: "#3fb950", warn: "#d29922", info: "#4493f8",
     cables: ["#4493f8", "#d29922", "#db61a2", "#3fb950"] },
-  light: { bg: "#ffffff", border: "#d1d9e0", floor: "#eef1f4", grid: "#d8dee4", tile: "#dbe9f7", rack: "#8c959f", server: "#afb8c1", bezel: "#57606a",
+  light: { bg: "#ffffff", border: "#d1d9e0", bench: "#8c959f", benchTop: "#b08a5a", router: "#eaeef2", standoff: "#8c959f", pi: "#2da44e", port: "#d0d7de", gold: "#c9a24a", grille: "#7a5c1e", red: "#cf222e", floor: "#eef1f4", grid: "#d8dee4", tile: "#dbe9f7", rack: "#8c959f", server: "#afb8c1", bezel: "#57606a",
     switch: "#8c959f", tray: "#afb8c1", text: "#59636e", title: "#1f2328", ok: "#1a7f37", warn: "#9a6700", info: "#0969da",
     cables: ["#0969da", "#bf8700", "#bf3989", "#1a7f37"] },
 };
@@ -38,6 +38,57 @@ function sag(a, b, depth, n = 12) {
   });
 }
 
+// A bench at the end of the row: a Raspberry Pi cluster, a switch, a router and a DGX Spark,
+// cabled to each other and to the last rack
+const LAB = rowW + 2.5, LAB_W = 11, BENCH = 4.6;
+const floorW = LAB + LAB_W + 1.5;
+function homelab(s, C) {
+  const blink = (p, color, r = 1.8) =>
+    s.dot(p, r, color, ` class="led" style="animation-duration:${(0.5 + rnd() * 1.2).toFixed(2)}s;animation-delay:${(rnd() * 1.5).toFixed(2)}s"`);
+
+  // bench: back legs, front legs, then the top
+  for (const lx of [LAB + 0.3, LAB + LAB_W - 0.7]) s.box(lx, 2, 0, lx + 0.4, 2.4, BENCH, C.bench);
+  for (const lx of [LAB + 0.3, LAB + LAB_W - 0.7]) s.box(lx, RD - 0.4, 0, lx + 0.4, RD, BENCH, C.bench);
+  s.box(LAB, 2, BENCH, LAB + LAB_W, RD, BENCH + 0.4, C.benchTop);
+  const top = BENCH + 0.4;
+
+  // router at the back with two antennas
+  s.box(LAB + 4, RD - 5, top, LAB + 6.4, RD - 3.2, top + 0.6, C.router);
+  for (const ax of [LAB + 4.4, LAB + 6]) s.path([[ax, RD - 4.2, top + 0.6], [ax, RD - 4.2, top + 2.6]], C.router, 2.2);
+  blink([LAB + 5.2, RD - 3.2, top + 0.3], C.info, 1.4);
+
+  // Raspberry Pi cluster: four boards on standoffs, each with power and activity lights
+  const px = LAB + 0.6, py = RD - 2.4;
+  for (const sx of [px + 0.1, px + 2.5]) s.box(sx, py + 1.6, top, sx + 0.15, py + 1.75, top + 4.6, C.standoff);
+  for (let i = 0; i < 4; i++) {
+    const z = top + 0.35 + i * 1.1;
+    s.box(px, py, z, px + 2.8, py + 1.8, z + 0.22, C.pi);
+    s.box(px + 0.3, py + 1.8, z + 0.22, px + 1, py + 1.95, z + 0.5, C.port);
+    blink([px + 1.9, py + 1.8, z + 0.11], C.red, 1.2);
+    blink([px + 2.4, py + 1.8, z + 0.11], C.ok, 1.2);
+  }
+
+  // small switch with blinking ports
+  s.box(LAB + 3.9, RD - 2.4, top, LAB + 6.6, RD - 0.3, top + 0.7, C.switch);
+  for (let p = 0; p < 5; p++) blink([LAB + 4.3 + p * 0.5, RD - 0.3, top + 0.35], C.ok, 1.2);
+
+  // DGX Spark: a small gold box with a grille
+  const dx = LAB + 7.2;
+  s.box(dx, RD - 3.4, top, dx + 3.2, RD - 0.3, top + 1.3, C.gold);
+  for (let g = 0; g < 6; g++) s.path([[dx + 0.35 + g * 0.45, RD - 0.29, top + 0.25], [dx + 0.35 + g * 0.45, RD - 0.29, top + 1.05]], C.grille, 1.4);
+  blink([dx + 2.9, RD - 0.29, top + 0.65], C.ok, 1.4);
+
+  // patch cables: Pis to the switch, switch to the Spark, and an uplink down to the last rack
+  s.path(sag([px + 1, py + 1.95, top + 1.4], [LAB + 4.3, RD - 0.3, top + 0.35], 0.8, 6), C.cables[0], 1.6);
+  s.path(sag([px + 1, py + 1.95, top + 3.6], [LAB + 4.8, RD - 0.3, top + 0.35], 1.2, 6), C.cables[2], 1.6);
+  s.path(sag([LAB + 6.3, RD - 0.3, top + 0.35], [dx + 0.3, RD - 0.3, top + 0.3], 0.6, 6), C.cables[1], 1.6);
+  s.path(sag([LAB + 5.8, RD - 0.3, top + 0.35], [rowW - 1.2, RD + 0.6, 2.5], 3.2, 12), C.cables[3], 2);
+
+  // label above the bench
+  const [lx, ly] = s.project(LAB + 0.4, RD, top + 6);
+  s.raw(`<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" fill="${C.text}">homelab · 4× pi · dgx spark</text>`);
+}
+
 function svg(themeName) {
   const C = THEMES[themeName];
   // straight-on view, so a long row of racks makes a wide, short picture
@@ -45,9 +96,9 @@ function svg(themeName) {
   seed = 42;
 
   // raised floor with a grid, and perforated cold-aisle tiles in front of the racks
-  s.quad([[-2, -1, 0], [rowW + 2, -1, 0], [rowW + 2, RD + 5, 0], [-2, RD + 5, 0]], C.floor);
-  for (let gx = -2; gx <= rowW + 2; gx += 2) s.path([[gx, -1, 0], [gx, RD + 5, 0]], C.grid, 1);
-  for (let gy = -1; gy <= RD + 5; gy += 2) s.path([[-2, gy, 0], [rowW + 2, gy, 0]], C.grid, 1);
+  s.quad([[-2, -1, 0], [floorW, -1, 0], [floorW, RD + 5, 0], [-2, RD + 5, 0]], C.floor);
+  for (let gx = -2; gx <= floorW; gx += 2) s.path([[gx, -1, 0], [gx, RD + 5, 0]], C.grid, 1);
+  for (let gy = -1; gy <= RD + 5; gy += 2) s.path([[-2, gy, 0], [floorW, gy, 0]], C.grid, 1);
   for (let tx = 0; tx < rowW; tx += 4) s.quad([[tx, RD + 1.5, 0.02], [tx + 2, RD + 1.5, 0.02], [tx + 2, RD + 4.5, 0.02], [tx, RD + 4.5, 0.02]], C.tile);
 
   let warnings = 0;
@@ -102,6 +153,8 @@ function svg(themeName) {
   }
   for (const m of motions) s.raw(`<circle r="2.6" fill="${C.title}"><animateMotion dur="${m.dur}s" begin="${m.delay}s" repeatCount="indefinite" path="${m.d}"/></circle>`);
 
+  homelab(s, C);
+
   const nodes = LAYOUTS.flat().length;
   const css = `.rack { opacity: 0; animation: up .6s ease-out forwards; }
     .led { animation: blink 1.2s steps(1) infinite; }
@@ -110,8 +163,8 @@ function svg(themeName) {
     @media (prefers-reduced-motion: reduce) { .rack { opacity: 1; animation: none; } .led { animation: none; } }`;
   return card(s, { bg: C.bg, border: C.border, title: C.title, text: C.text },
     "dc-blr-01 · row A",
-    `${RACKS} racks · ${nodes} nodes · <tspan fill="${C.ok}">${nodes - warnings} healthy</tspan> · <tspan fill="${C.warn}">${warnings} warn</tspan>`,
-    css, `Isometric data centre: ${RACKS} racks of ${nodes} servers with blinking status lights, a cable tray and patch cables carrying packets.`);
+    `${RACKS} racks · ${nodes} nodes · <tspan fill="${C.ok}">${nodes - warnings} healthy</tspan> · <tspan fill="${C.warn}">${warnings} warn</tspan> · homelab online`,
+    css, `Isometric data centre: ${RACKS} racks of ${nodes} servers with blinking status lights, a cable tray and patch cables carrying packets, plus a homelab bench with a Raspberry Pi cluster, a switch, a router and a DGX Spark.`);
 }
 
 for (const theme of Object.keys(THEMES)) writeFileSync(new URL(`../assets/datacenter-${theme}.svg`, import.meta.url), svg(theme));
