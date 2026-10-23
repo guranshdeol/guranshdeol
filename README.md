@@ -35,9 +35,11 @@
 
 <picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables." width="100%"/></picture>
 
+<!-- Holopin board, turned off for now. Remove the comment markers to bring it back.
 ### `$ ls ~/badges`
 
 [![@guranshdeol's Holopin badges](https://holopin.me/guranshdeol)](https://holopin.io/@guranshdeol)
+-->
 
 ---
 
