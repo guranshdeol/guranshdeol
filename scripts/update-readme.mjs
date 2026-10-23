@@ -120,7 +120,8 @@ async function contributionModel() {
   cal.weeks.forEach((w, x) =>
     w.contributionDays.forEach((d, i) => {
       if (!d.contributionCount) return;
-      const h = 0.6 + 2.4 * Math.log2(1 + d.contributionCount);
+      // Tall bars, so the model still reads as a skyline from the viewer's default camera
+      const h = 1.5 + 4.5 * Math.log2(1 + d.contributionCount);
       // Sunday at the back, like the calendar on the profile
       const y = (6 - i) * pitch;
       m.box(x * pitch, y, 0, x * pitch + cell, y + cell, h, { bottom: false });
