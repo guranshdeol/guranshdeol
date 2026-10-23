@@ -1,7 +1,8 @@
-// Refreshes the live parts of README.md: the activity log, the 3D contribution model and the fortune.
+// Refreshes the live parts of the profile: the activity log and fortune in README.md, and the contribution
+// topology (assets/topology-{dark,light}.svg).
 // Runs in the "Update README" workflow every 6 hours. Needs GITHUB_TOKEN for the contribution calendar.
 import { readFileSync, writeFileSync } from "node:fs";
-import { createModel, replaceSection } from "./stl.mjs";
+import { replaceSection } from "./sections.mjs";
 import { card, createScene, shades } from "./iso.mjs";
 
 const USER = "guranshdeol";
@@ -155,27 +156,8 @@ function topologySvg(cal, theme) {
     @keyframes rise { from { transform: scaleY(0); } }
     @media (prefers-reduced-motion: reduce) { .b { animation: none; } }`;
   return card(s, C, `${cal.totalContributions} contributions · last 12 months`,
-    `peak <tspan fill="${C.accent}">${busiest.contributionCount}</tspan> on ${busiest.date} · click to open in 3D`,
+    `peak <tspan fill="${C.accent}">${busiest.contributionCount}</tspan> on ${busiest.date}`,
     css, `Isometric contribution skyline: ${cal.totalContributions} contributions in the last year.`);
-}
-
-// The same calendar as a 3D model, opened from the topology image
-function contributionModel(cal) {
-  const m = createModel("contributions");
-  const cell = 1, gap = 0.25, pitch = cell + gap, plate = 0.5;
-  const weeks = cal.weeks.length;
-  m.box(-0.6, -0.6, -plate, weeks * pitch + 0.35, 7 * pitch + 0.35, 0);
-  cal.weeks.forEach((w, x) =>
-    w.contributionDays.forEach((d, i) => {
-      if (!d.contributionCount) return;
-      // Tall bars, so the model still reads as a skyline from the viewer's default camera
-      const h = 1.5 + 4.5 * Math.log2(1 + d.contributionCount);
-      // Sunday at the back, like the calendar on the profile
-      const y = (6 - i) * pitch;
-      m.box(x * pitch, y, 0, x * pitch + cell, y + cell, h, { bottom: false });
-    }),
-  );
-  return m.toString();
 }
 
 // Changes once a week. The uptime line and the rolling calendar still give about one commit a day.
@@ -190,7 +172,6 @@ if (log) readme = replaceSection(readme, "ACTIVITY", log);
 const cal = await calendar();
 if (cal) {
   for (const theme of Object.keys(LEVELS)) writeFileSync(asset(`topology-${theme}.svg`), topologySvg(cal, theme));
-  writeFileSync(asset("contributions.stl"), contributionModel(cal) + "\n");
 }
 readme = replaceSection(readme, "FORTUNE", fortune(), { inline: true });
 writeFileSync(README, readme);

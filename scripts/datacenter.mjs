@@ -1,8 +1,6 @@
-// Builds the data-centre scene: assets/datacenter-{dark,light}.svg (coloured, animated, shown in the README)
-// and assets/datacenter.stl (the same row of racks as a 3D model GitHub lets visitors rotate).
+// Builds the data-centre scene in the README: assets/datacenter-{dark,light}.svg, coloured and animated.
 // Static, so this only runs by hand:  node scripts/datacenter.mjs
 import { writeFileSync } from "node:fs";
-import { createModel } from "./stl.mjs";
 import { card, createScene } from "./iso.mjs";
 
 const RACKS = 5, RW = 6, RD = 8, RH = 15, GAP = 0.8;
@@ -109,38 +107,9 @@ function svg(themeName) {
     @media (prefers-reduced-motion: reduce) { .rack { opacity: 1; animation: none; } .led { animation: none; } }`;
   return card(s, { bg: C.bg, border: C.border, title: C.title, text: C.text },
     "dc-blr-01 · row A",
-    `${RACKS} racks · ${nodes} nodes · <tspan fill="${C.ok}">${nodes - warnings} healthy</tspan> · <tspan fill="${C.warn}">${warnings} warn</tspan> · click to open in 3D`,
+    `${RACKS} racks · ${nodes} nodes · <tspan fill="${C.ok}">${nodes - warnings} healthy</tspan> · <tspan fill="${C.warn}">${warnings} warn</tspan>`,
     css, `Isometric data centre: ${RACKS} racks of ${nodes} servers with blinking status lights, a cable tray and patch cables carrying packets.`);
 }
 
-// Same racks as a 3D model (one colour; GitHub's viewer adds the lighting)
-function stl() {
-  const m = createModel("datacenter");
-  m.box(-4, -4, -0.6, rowW + 4, RD + 9, 0);
-  for (let r = 0; r < RACKS; r++) {
-    const x = rackX(r);
-    m.box(x, 0, 0, x + RW, RD, RH, { bottom: false });
-    let z = 0.9;
-    for (const units of LAYOUTS[r]) {
-      const h = units * UNIT - 0.25;
-      m.box(x + 0.5, RD, z, x + RW - 0.5, RD + 0.35, z + h, { bottom: false });
-      m.box(x + RW - 1.3, RD + 0.35, z + h / 2 - 0.25, x + RW - 0.8, RD + 0.6, z + h / 2 + 0.25, { bottom: false });
-      z += units * UNIT;
-    }
-    m.box(x + 0.5, RD, RH - 2.2, x + RW - 0.5, RD + 0.45, RH - 0.9, { bottom: false });
-    m.box(x + RW / 2 - 0.3, RD - 1.8, RH, x + RW / 2 + 0.3, RD - 1.2, RH + 4, { bottom: false });
-  }
-  m.box(-1.5, RD - 2.5, RH + 4, rowW + 1.5, RD - 0.5, RH + 4.6);
-  for (let r = 0; r < RACKS - 1; r++) {
-    const pts = sag([rackX(r) + 2, RD + 0.7, RH - 1.6], [rackX(r + 1) + 2, RD + 0.7, RH - 1.6], 2.5, 8);
-    for (let i = 0; i < pts.length - 1; i++) {
-      const [p, q] = [pts[i], pts[i + 1]];
-      m.box(Math.min(p[0], q[0]) - 0.15, RD + 0.55, Math.min(p[2], q[2]) - 0.15, Math.max(p[0], q[0]) + 0.15, RD + 0.85, Math.max(p[2], q[2]) + 0.15, { bottom: false });
-    }
-  }
-  return m.toString();
-}
-
 for (const theme of Object.keys(THEMES)) writeFileSync(new URL(`../assets/datacenter-${theme}.svg`, import.meta.url), svg(theme));
-writeFileSync(new URL("../assets/datacenter.stl", import.meta.url), stl() + "\n");
-console.log("wrote datacenter-dark.svg, datacenter-light.svg, datacenter.stl");
+console.log("wrote datacenter-dark.svg, datacenter-light.svg");

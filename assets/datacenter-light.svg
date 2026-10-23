@@ -9,7 +9,7 @@
   </style>
   <rect x="-171.7" y="-234.0" width="526.4" height="520.0" rx="6.13" fill="#ffffff" stroke="#d1d9e0" stroke-width="0.61"/>
   <text x="-160.7" y="-218.1" fill="#1f2328" font-weight="700">dc-blr-01 · row A</text>
-  <text x="-160.7" y="-207.1" fill="#59636e">5 racks · 25 nodes · <tspan fill="#1a7f37">21 healthy</tspan> · <tspan fill="#9a6700">4 warn</tspan> · click to open in 3D</text>
+  <text x="-160.7" y="-207.1" fill="#59636e">5 racks · 25 nodes · <tspan fill="#1a7f37">21 healthy</tspan> · <tspan fill="#9a6700">4 warn</tspan></text>
   <polygon points="-9.5,-16.5 344.8,188.1 192.4,276.1 -161.9,71.5" fill="#eef1f4"/>
 <path d="M-9.5 -16.5L-161.9 71.5" fill="none" stroke="#d8dee4" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M9.5 -5.5L-142.9 82.5" fill="none" stroke="#d8dee4" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>

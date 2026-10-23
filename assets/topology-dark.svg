@@ -7,7 +7,7 @@
   </style>
   <rect x="-58.1" y="-49.5" width="450.8" height="308.5" rx="5.25" fill="#0d1117" stroke="#30363d" stroke-width="0.52"/>
   <text x="-48.7" y="-35.9" fill="#e6edf3" font-weight="700">195 contributions · last 12 months</text>
-  <text x="-48.7" y="-26.5" fill="#8d96a0">peak <tspan fill="#3fb950">27</tspan> on 2026-10-23 · click to open in 3D</text>
+  <text x="-48.7" y="-26.5" fill="#8d96a0">peak <tspan fill="#3fb950">27</tspan> on 2026-10-23</text>
   <g class="b" style="animation-delay:0.00s" stroke="rgba(0,0,0,.35)" stroke-width=".4" stroke-linejoin="round"><polygon points="6.1,3.5 0.0,7.0 0.0,-7.9 6.1,-11.4" fill="#0b3822"/><polygon points="-6.1,3.5 0.0,7.0 0.0,-7.9 -6.1,-11.4" fill="#092c1a"/><polygon points="0.0,-14.9 6.1,-11.4 0.0,-7.9 -6.1,-11.4" fill="#104c2e"/></g>
 <g stroke="rgba(0,0,0,.35)" stroke-width=".4" stroke-linejoin="round"><polygon points="-1.2,7.7 -7.3,11.2 -7.3,10.2 -1.2,6.7" fill="#12161c"/><polygon points="-13.3,7.7 -7.3,11.2 -7.3,10.2 -13.3,6.7" fill="#0e1116"/><polygon points="-7.3,3.2 -1.2,6.7 -7.3,10.2 -13.3,6.7" fill="#191e26"/></g>
 <g stroke="rgba(0,0,0,.35)" stroke-width=".4" stroke-linejoin="round"><polygon points="13.3,7.7 7.3,11.2 7.3,10.2 13.3,6.7" fill="#12161c"/><polygon points="1.2,7.7 7.3,11.2 7.3,10.2 1.2,6.7" fill="#0e1116"/><polygon points="7.3,3.2 13.3,6.7 7.3,10.2 1.2,6.7" fill="#191e26"/></g>

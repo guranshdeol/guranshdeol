@@ -6,7 +6,7 @@
     .win { opacity: 0; transform: translateY(8px); animation: rise .5s ease-out 4.5s forwards; }
     .ln { opacity: 0; animation: show .25s ease-out forwards; }
     .cmd { clip-path: inset(0 100% 0 0); animation: wipe 3s steps(58) forwards; }
-    .cursor { opacity: 0; animation: show .01s 15.75s forwards, blink 1.1s steps(1) 15.75s infinite; }
+    .cursor { opacity: 0; animation: show .01s 22.00s forwards, blink 1.1s steps(1) 22.00s infinite; }
     @keyframes wipe { to { clip-path: inset(0 0 0 0); } }
     @keyframes show { to { opacity: 1; } }
     @keyframes rise { to { opacity: 1; transform: none; } }
@@ -26,19 +26,17 @@
     <text x="430" y="154" text-anchor="middle" style="font-size:12px;fill:#59636e">nutanix@cvm: ~</text>
     <text x="24" y="196" class="cmd" style="animation-delay:4.90s"><tspan fill="#1a7f37">nutanix@cvm$</tspan><tspan> ncc health_checks run_all --target=guranshdeol</tspan></text>
     <text x="24" y="219" class="ln" style="animation-delay:8.20s"><tspan fill="#59636e">Running 9 checks against 1 human...</tspan></text>
-    <text x="24" y="242" class="ln" style="animation-delay:8.75s"></text>
-    <text x="24" y="265" class="ln" style="animation-delay:9.30s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] role ....................... Consultant @ Nutanix</tspan></text>
-    <text x="24" y="288" class="ln" style="animation-delay:9.85s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] certifications ............. NCM-MCI · 10× Nutanix · GitHub</tspan></text>
-    <text x="24" y="311" class="ln" style="animation-delay:10.40s"><tspan>[ </tspan><tspan fill="#0969da" font-weight="700">INFO</tspan><tspan> ] location ................... Punjab (home) ↔ Bengaluru (work)</tspan></text>
-    <text x="24" y="334" class="ln" style="animation-delay:10.95s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] clusters left healthier .... all of them</tspan></text>
-    <text x="24" y="357" class="ln" style="animation-delay:11.50s"><tspan>[ </tspan><tspan fill="#9a6700" font-weight="700">WARN</tspan><tspan> ] side project ............... AI agent asks before every fix</tspan></text>
-    <text x="24" y="380" class="ln" style="animation-delay:12.05s"><tspan fill="#59636e">         └─ expected behaviour, will not fix</tspan></text>
-    <text x="24" y="403" class="ln" style="animation-delay:12.60s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] latest video ............... AI Distillation Explained</tspan></text>
-    <text x="24" y="426" class="ln" style="animation-delay:13.15s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] uptime ..................... 5 years, 22 days</tspan></text>
-    <text x="24" y="449" class="ln" style="animation-delay:13.70s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] open to opportunities ...... yes</tspan></text>
-    <text x="24" y="472" class="ln" style="animation-delay:14.25s"></text>
-    <text x="24" y="495" class="ln" style="animation-delay:14.80s"><tspan font-weight="700">Summary:</tspan><tspan> 7 PASS · 1 INFO · 1 WARN · 0 FAIL</tspan></text>
-    <text x="24" y="518" class="ln" style="animation-delay:15.35s"><tspan fill="#59636e">Full report → </tspan><tspan fill="#0969da">guranshdeol.tech</tspan></text>
+    <text x="24" y="265" class="ln" style="animation-delay:9.40s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] role ....................... Consultant @ Nutanix</tspan></text>
+    <text x="24" y="288" class="ln" style="animation-delay:10.60s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] certifications ............. NCM-MCI · 10× Nutanix · GitHub</tspan></text>
+    <text x="24" y="311" class="ln" style="animation-delay:11.80s"><tspan>[ </tspan><tspan fill="#0969da" font-weight="700">INFO</tspan><tspan> ] location ................... Punjab (home) ↔ Bengaluru (work)</tspan></text>
+    <text x="24" y="334" class="ln" style="animation-delay:13.00s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] clusters left healthier .... all of them</tspan></text>
+    <text x="24" y="357" class="ln" style="animation-delay:14.20s"><tspan>[ </tspan><tspan fill="#9a6700" font-weight="700">WARN</tspan><tspan> ] side project ............... AI agent asks before every fix</tspan></text>
+    <text x="24" y="380" class="ln" style="animation-delay:15.40s"><tspan fill="#59636e">         └─ expected behaviour, will not fix</tspan></text>
+    <text x="24" y="403" class="ln" style="animation-delay:16.60s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] latest video ............... AI Distillation Explained</tspan></text>
+    <text x="24" y="426" class="ln" style="animation-delay:17.80s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] uptime ..................... 5 years, 22 days</tspan></text>
+    <text x="24" y="449" class="ln" style="animation-delay:19.00s"><tspan>[ </tspan><tspan fill="#1a7f37" font-weight="700">PASS</tspan><tspan> ] open to opportunities ...... yes</tspan></text>
+    <text x="24" y="495" class="ln" style="animation-delay:20.20s"><tspan font-weight="700">Summary:</tspan><tspan> 7 PASS · 1 INFO · 1 WARN · 0 FAIL</tspan></text>
+    <text x="24" y="518" class="ln" style="animation-delay:21.40s"><tspan fill="#59636e">Full report → </tspan><tspan fill="#0969da">guranshdeol.tech</tspan></text>
     <rect class="cursor" x="276.9" y="505" width="8" height="16" fill="#1a7f37"/>
   </g>
 </svg>

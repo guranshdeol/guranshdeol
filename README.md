@@ -9,7 +9,7 @@
 
 ### `$ ncc topology`
 
-<a href="./assets/contributions.stl"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/topology-light.svg"/><img src="./assets/topology-dark.svg" alt="Isometric contribution skyline. Click to open it as a 3D model." width="100%"/></picture></a>
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/topology-light.svg"/><img src="./assets/topology-dark.svg" alt="Isometric contribution skyline." width="100%"/></picture>
 
 ### `$ lsmod`
 
@@ -33,7 +33,7 @@
 
 ### `$ ssh dc-blr-01`
 
-<a href="./assets/datacenter.stl"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables. Click to open it as a 3D model." width="100%"/></picture></a>
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables." width="100%"/></picture>
 
 ### `$ ls ~/badges`
 

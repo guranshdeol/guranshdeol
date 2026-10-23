@@ -37,7 +37,7 @@ function uptime(now = new Date()) {
 }
 
 // Timeline, in seconds
-const T = { banner: 2.2, subtitle: 1.6, gap: 0.5, command: 3.0, step: 0.55 };
+const T = { banner: 2.2, subtitle: 1.6, gap: 0.5, command: 3.0, step: 1.2 };
 const subtitleAt = T.banner + 0.2;
 const windowAt = subtitleAt + T.subtitle + T.gap;
 const commandAt = windowAt + 0.4;
@@ -123,16 +123,20 @@ function build(video, theme) {
   const winY = subtitleY + 22, winTop = winY + 64, lh = 23;
   const H = winTop + lines.length * lh + 6;
 
+  // Each line waits T.step after the one before it; blank lines take no time
+  let at = linesAt - T.step;
   const body = lines
     .map((parts, i) => {
+      if (!parts.length) return "";
       const spans = parts.map((p) => `<tspan${p.c ? ` fill="${p.c}"` : ""}${p.b ? ' font-weight="700"' : ""}>${esc(p.t)}</tspan>`).join("");
       const cls = i === 0 ? "cmd" : "ln";
-      const delay = i === 0 ? commandAt : linesAt + (i - 1) * T.step;
+      const delay = i === 0 ? commandAt : (at += T.step);
       return `<text x="24" y="${winTop + i * lh}" class="${cls}" style="animation-delay:${delay.toFixed(2)}s">${spans}</text>`;
     })
+    .filter(Boolean)
     .join("\n    ");
   const lastY = winTop + (lines.length - 1) * lh;
-  const cursorAt = (linesAt + (lines.length - 2) * T.step + 0.4).toFixed(2);
+  const cursorAt = (at + 0.6).toFixed(2);
   const wh = H - winY - 1;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Guransh Deol. Health check: Consultant at Nutanix. NCM-MCI, 10 Nutanix certifications. From Punjab, working in Bengaluru. Latest video: ${esc(video)}. Open to opportunities.">
