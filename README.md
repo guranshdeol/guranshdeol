@@ -1,54 +1,56 @@
-[![](https://visitcount.itsvg.in/api?id=guranshdeol&icon=0&color=0)](https://visitcount.itsvg.in)
-## 👋🏻Hello there! 
+<a href="https://guranshdeol.tech"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/health-check-light.svg"/><img src="./assets/health-check-dark.svg" alt="Guransh Deol. Health check: Consultant at Nutanix. NCM-MCI, 10× Nutanix certified. From Punjab, working in Bengaluru. Open to opportunities." width="100%"/></picture></a>
 
-Hello, I'm Guransh Deol, a driven Pre-Final Year CSE student with a passion for Open Source, Web Development, Cloud and DevOps. I believe in the power of open collaboration, actively contributing to open-source projects. Crafting seamless web experiences is my forte, and I navigate the DevOps landscape for efficient integration and deployment. Let's connect and innovate together! 🚀
+### `$ ssh dc-blr-01`
 
-[Let's Connect](https://bio.link/guranshdeol)
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables." width="100%"/></picture>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/guranshdeol) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/guranshdeol) [![BioLink](https://img.shields.io/badge/BioLink-%230077B5.svg)](https://guranshdeol.bio.link)
+### `$ lsmod`
 
-### 💻 Tech Stack:
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) 	![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)  ![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-
-### 📊 GitHub Stats:
-<!--
-![](https://github-readme-stats.vercel.app/api?username=guranshdeol&theme=dark&hide_border=false&include_all_commits=false&count_private=true)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=guranshdeol&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
--->
 <p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&theme=tokyonight" />
-  <img width="51%" src="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&theme=tokyonight" />
+  <picture><source media="(prefers-color-scheme: light)" srcset="./assets/nutanix-light.svg"/><img src="./assets/nutanix-dark.svg" alt="Nutanix" height="56"/></picture>
+  <picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=aws,docker,linux,py,powershell&perline=16&theme=light"/><img src="https://skillicons.dev/icons?i=aws,docker,linux,py,powershell&perline=16" alt="AWS, Docker, Linux, Python, PowerShell" height="56"/></picture>
+</p>
+<p align="center">
+  <picture><source media="(prefers-color-scheme: light)" srcset="./assets/ai-light.svg"/><img src="./assets/ai-dark.svg" alt="Claude, Model Context Protocol, ChatGPT, Cursor, Hermes Agent, Ollama, Hugging Face" height="42"/></picture>
+</p>
+<p align="center">
+  <picture><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=kubernetes,bash,githubactions,fastapi,ts,react,nextjs,electron,cpp,mysql,raspberrypi&perline=16&theme=light"/><img src="https://skillicons.dev/icons?i=kubernetes,bash,githubactions,fastapi,ts,react,nextjs,electron,cpp,mysql,raspberrypi&perline=16" alt="Kubernetes, Bash, GitHub Actions, FastAPI, TypeScript, React, Next.js, Electron, C++, MySQL, Raspberry Pi" height="30"/></picture>
 </p>
 
-### 📛 BadgeBoard
-[![An image of @guranshdeol's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/guranshdeol)](https://holopin.io/@guranshdeol)
+### `$ tail activity.log`
 
+<!-- ACTIVITY:START -->
+1. 🎉 Merged 4 PRs [#1](https://github.com/guranshdeol/out-of-office-scheduler/pull/1) [#2](https://github.com/guranshdeol/out-of-office-scheduler/pull/2) [#3](https://github.com/guranshdeol/out-of-office-scheduler/pull/3) [#4](https://github.com/guranshdeol/out-of-office-scheduler/pull/4) in [out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
+2. ✍️ Published [Many alerts, one cause: an incident responder built on a FalkorDB graph](https://guranshdeol.hashnode.dev/many-alerts-one-cause-an-incident-responder-built-on-a-falkordb-graph)
+3. 🎥 Uploaded [AI Distillation Explained: How AI Models Get Copied](https://www.youtube.com/watch?v=xTxYn6Siwfo)
+4. 🎥 Uploaded [Build Your Own MCP Server in 5 Minutes (Python + Claude Code)](https://www.youtube.com/watch?v=k7Tv0l51UUs)
+5. 🎥 Uploaded [What Is an MCP Server? Set Up Your First One in Claude Code (Beginner's Guide)](https://www.youtube.com/watch?v=_a7QyIm6HGo)
+<!-- ACTIVITY:END -->
 
+### `$ ncc stats`
 
+<p align="center">
+  <picture><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&custom_title=ncc%20stats%20%C2%B7%20guranshdeol&border_radius=10&bg_color=ffffff&title_color=1a7f37&text_color=1f2328&icon_color=1a7f37&ring_color=1a7f37&border_color=d1d9e0"/><img width="49%" src="https://github-readme-stats.vercel.app/api?username=guranshdeol&show_icons=true&custom_title=ncc%20stats%20%C2%B7%20guranshdeol&border_radius=10&bg_color=0d1117&title_color=3fb950&text_color=e6edf3&icon_color=3fb950&ring_color=3fb950&border_color=30363d" alt="GitHub stats"/></picture>
+  <picture><source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&border_radius=10&background=ffffff&border=d1d9e0&stroke=d1d9e0&ring=1a7f37&fire=1a7f37&currStreakNum=1a7f37&currStreakLabel=1a7f37&sideNums=1f2328&sideLabels=59636e&dates=59636e"/><img width="49%" src="https://github-readme-streak-stats.herokuapp.com/?user=guranshdeol&border_radius=10&background=0d1117&border=30363d&stroke=30363d&ring=3fb950&fire=3fb950&currStreakNum=3fb950&currStreakLabel=3fb950&sideNums=e6edf3&sideLabels=8d96a0&dates=8d96a0" alt="Contribution streak"/></picture>
+</p>
 
+### `$ ncc topology`
 
-<!--## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=guranshdeol&theme=radical&no-frame=false&no-bg=false&margin-w=4)
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/topology-light.svg"/><img src="./assets/topology-dark.svg" alt="Isometric contribution skyline." width="100%"/></picture>
+
+<!-- Holopin board, turned off for now. Remove the comment markers to bring it back.
+### `$ ls ~/badges`
+
+[![@guranshdeol's Holopin badges](https://holopin.me/guranshdeol)](https://holopin.io/@guranshdeol)
 -->
-### :zap: Recent Activity
-<!--START_SECTION:activity-->
-1. ❌ Merged PR [#4](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-2. 💪 Opened PR [#4](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-3. ❌ Merged PR [#2](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-4. ❌ Merged PR [#3](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-5. 💪 Opened PR [#3](undefined) in [guranshdeol/out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-<!--END_SECTION:activity-->
 
-### ✍️ Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+<a href="https://guranshdeol.tech"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/footer-light.svg"/><img src="./assets/footer-dark.svg" alt="fortune, then exit: Connection to guranshdeol closed." width="100%"/></picture></a>
 
----
-
-
-
-
-<!---
-guranshdeol/guranshdeol is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+<p align="center">
+  <code>reconnect</code>&nbsp;
+  <a href="https://guranshdeol.tech">guranshdeol.tech</a> ·
+  <a href="https://www.youtube.com/@deolguransh">youtube</a> ·
+  <a href="https://guranshdeol.hashnode.dev">hashnode</a> ·
+  <a href="https://www.linkedin.com/in/guranshdeol/">linkedin</a> ·
+  <a href="https://twitter.com/guranshdeol">x</a>
+</p>

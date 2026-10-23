@@ -1,16 +1,40 @@
 name: Update README
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
 jobs:
   build:
-    name: Update this repo's README with recent activity
+    name: Refresh the health check, activity log, topology and fortune
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: cxhello/github-activity-readme@master
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Rebuild
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/health-check.mjs
+          node scripts/update-readme.mjs
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A README.md assets
+          if ! git diff --cached --quiet; then
+            git commit -m "Update README"
+          elif [ $(( $(date +%s) - $(git log -1 --format=%ct) )) -gt $(( 50 * 86400 )) ]; then
+            # GitHub pauses scheduled workflows after 60 quiet days
+            git commit --allow-empty -m "Keep the README workflow active"
+          else
+            exit 0
+          fi
+          git pull --rebase --autostash
+          git push
