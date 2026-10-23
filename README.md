@@ -20,11 +20,11 @@
 ### `$ tail activity.log`
 
 <!-- ACTIVITY:START -->
-1. 🎉 Merged 4 PRs [#1](https://github.com/guranshdeol/out-of-office-scheduler/pull/1) [#2](https://github.com/guranshdeol/out-of-office-scheduler/pull/2) [#3](https://github.com/guranshdeol/out-of-office-scheduler/pull/3) [#4](https://github.com/guranshdeol/out-of-office-scheduler/pull/4) in [out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
-2. ✍️ Published [Many alerts, one cause: an incident responder built on a FalkorDB graph](https://guranshdeol.hashnode.dev/many-alerts-one-cause-an-incident-responder-built-on-a-falkordb-graph)
-3. 🎥 Uploaded [AI Distillation Explained: How AI Models Get Copied](https://www.youtube.com/watch?v=xTxYn6Siwfo)
-4. 🎥 Uploaded [Build Your Own MCP Server in 5 Minutes (Python + Claude Code)](https://www.youtube.com/watch?v=k7Tv0l51UUs)
-5. 🎥 Uploaded [What Is an MCP Server? Set Up Your First One in Claude Code (Beginner's Guide)](https://www.youtube.com/watch?v=_a7QyIm6HGo)
+1. 🎉 Merged PR [#1](https://github.com/guranshdeol/guranshdeol/pull/1) in [guranshdeol](https://github.com/guranshdeol/guranshdeol)
+2. 🎉 Merged 4 PRs [#1](https://github.com/guranshdeol/out-of-office-scheduler/pull/1) [#2](https://github.com/guranshdeol/out-of-office-scheduler/pull/2) [#3](https://github.com/guranshdeol/out-of-office-scheduler/pull/3) [#4](https://github.com/guranshdeol/out-of-office-scheduler/pull/4) in [out-of-office-scheduler](https://github.com/guranshdeol/out-of-office-scheduler)
+3. ✍️ Published [Many alerts, one cause: an incident responder built on a FalkorDB graph](https://guranshdeol.hashnode.dev/many-alerts-one-cause-an-incident-responder-built-on-a-falkordb-graph)
+4. 🎥 Uploaded [AI Distillation Explained: How AI Models Get Copied](https://www.youtube.com/watch?v=xTxYn6Siwfo)
+5. 🎥 Uploaded [Build Your Own MCP Server in 5 Minutes (Python + Claude Code)](https://www.youtube.com/watch?v=k7Tv0l51UUs)
 <!-- ACTIVITY:END -->
 
 ### `$ ncc stats`
