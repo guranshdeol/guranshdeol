@@ -1,9 +1,9 @@
 // Builds the data-centre scene in the README: assets/datacenter-{dark,light}.svg, coloured and animated.
 // Static, so this only runs by hand:  node scripts/datacenter.mjs
 import { writeFileSync } from "node:fs";
-import { card, createScene } from "./iso.mjs";
+import { card, createScene, oblique } from "./iso.mjs";
 
-const RACKS = 5, RW = 6, RD = 8, RH = 15, GAP = 0.8;
+const RACKS = 7, RW = 6, RD = 8, RH = 15, GAP = 0.8;
 const UNIT = 1.7;
 // Server heights per rack, bottom to top, in rack units
 const LAYOUTS = [
@@ -12,6 +12,8 @@ const LAYOUTS = [
   [2, 2, 1, 1, 1],
   [1, 2, 1, 1, 2],
   [1, 1, 1, 2, 2],
+  [2, 1, 2, 1, 1],
+  [1, 2, 2, 1, 1],
 ];
 const rackX = (r) => r * (RW + GAP);
 const rowW = rackX(RACKS - 1) + RW;
@@ -38,14 +40,15 @@ function sag(a, b, depth, n = 12) {
 
 function svg(themeName) {
   const C = THEMES[themeName];
-  const s = createScene(11);
+  // straight-on view, so a long row of racks makes a wide, short picture
+  const s = createScene(11, oblique());
   seed = 42;
 
   // raised floor with a grid, and perforated cold-aisle tiles in front of the racks
-  s.quad([[-2, -1, 0], [rowW + 2, -1, 0], [rowW + 2, RD + 7, 0], [-2, RD + 7, 0]], C.floor);
-  for (let gx = -2; gx <= rowW + 2; gx += 2) s.path([[gx, -1, 0], [gx, RD + 7, 0]], C.grid, 1);
-  for (let gy = -1; gy <= RD + 7; gy += 2) s.path([[-2, gy, 0], [rowW + 2, gy, 0]], C.grid, 1);
-  for (let tx = 0; tx < rowW; tx += 4) s.quad([[tx, RD + 2, 0.02], [tx + 2, RD + 2, 0.02], [tx + 2, RD + 6, 0.02], [tx, RD + 6, 0.02]], C.tile);
+  s.quad([[-2, -1, 0], [rowW + 2, -1, 0], [rowW + 2, RD + 5, 0], [-2, RD + 5, 0]], C.floor);
+  for (let gx = -2; gx <= rowW + 2; gx += 2) s.path([[gx, -1, 0], [gx, RD + 5, 0]], C.grid, 1);
+  for (let gy = -1; gy <= RD + 5; gy += 2) s.path([[-2, gy, 0], [rowW + 2, gy, 0]], C.grid, 1);
+  for (let tx = 0; tx < rowW; tx += 4) s.quad([[tx, RD + 1.5, 0.02], [tx + 2, RD + 1.5, 0.02], [tx + 2, RD + 4.5, 0.02], [tx, RD + 4.5, 0.02]], C.tile);
 
   let warnings = 0;
   for (let r = 0; r < RACKS; r++) {

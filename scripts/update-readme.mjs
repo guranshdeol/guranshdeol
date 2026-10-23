@@ -3,7 +3,8 @@
 // Runs in the "Update README" workflow every 6 hours. Needs GITHUB_TOKEN for the contribution calendar.
 import { readFileSync, writeFileSync } from "node:fs";
 import { replaceSection } from "./sections.mjs";
-import { card, createScene, shades } from "./iso.mjs";
+import { card, createScene, isometric, shades } from "./iso.mjs";
+import { esc, FONT, spans, THEMES as TERMINAL, windowFrame } from "./terminal.mjs";
 
 const USER = "guranshdeol";
 const YOUTUBE = "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-Z9VvWUZUq7SNZbaAENnvA";
@@ -170,12 +171,13 @@ function topologySvg(cal, theme) {
   const counts = cal.weeks.flatMap((w) => w.contributionDays.map((d) => d.contributionCount));
   const max = Math.max(1, ...counts);
   const level = (c) => (c === 0 ? 0 : Math.min(4, 1 + Math.floor((3 * Math.log(1 + c)) / Math.log(1 + max) + 0.0001)));
-  const s = createScene(7);
+  // a flatter 20° view and shorter bars keep the skyline wide and low
+  const s = createScene(7, isometric(20));
   const cells = [];
   cal.weeks.forEach((w, x) => w.contributionDays.forEach((d, i) => cells.push({ x, y: i, c: d.contributionCount })));
   cells.sort((a, b) => a.x + a.y - (b.x + b.y));
   // Linear heights, so a 1-contribution day stays short next to the peak; scaled to the year's busiest day
-  const unit = Math.min(0.9, 22 / max);
+  const unit = Math.min(0.6, 12 / max);
   for (const { x, y, c } of cells) {
     const h = c ? 0.5 + c * unit : 0.15;
     const color = { ...shades(C.cells[level(c)]), stroke: C.edge };
@@ -196,6 +198,35 @@ function fortune() {
   return FORTUNES[n % FORTUNES.length];
 }
 
+// The footer: the same terminal window as the health check, running `fortune` and then `exit`
+function footerSvg(theme, saying) {
+  const C = TERMINAL[theme];
+  const lines = [
+    [{ t: "nutanix@cvm$", c: C.pass }, { t: " fortune" }],
+    [{ t: saying }],
+    [],
+    [{ t: "nutanix@cvm$", c: C.pass }, { t: " exit" }],
+    [{ t: "logout", c: C.muted }],
+    [{ t: "Connection to guranshdeol closed.", c: C.muted }],
+  ];
+  const W = 860, top = 64, lh = 23, H = top + lines.length * lh + 4;
+  const body = lines
+    .map((parts, i) => (parts.length ? `<text x="24" y="${top + i * lh}" class="ln" style="animation-delay:${(i * 0.35).toFixed(2)}s">${spans(parts)}</text>` : ""))
+    .filter(Boolean)
+    .join("\n  ");
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="fortune: ${esc(saying)}. exit. Connection to guranshdeol closed.">
+  <style>
+    text { font: 14px ${FONT}; fill: ${C.fg}; white-space: pre; }
+    .ln { opacity: 0; animation: show .3s ease-out forwards; }
+    @keyframes show { to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .ln { opacity: 1; animation: none; } }
+  </style>
+  ${windowFrame(W, 0, H - 1, C)}
+  ${body}
+</svg>
+`;
+}
+
 let readme = readFileSync(README, "utf8");
 const log = await activity();
 if (log) readme = replaceSection(readme, "ACTIVITY", log);
@@ -203,6 +234,7 @@ const cal = await calendar();
 if (cal) {
   for (const theme of Object.keys(LEVELS)) writeFileSync(asset(`topology-${theme}.svg`), topologySvg(cal, theme));
 }
-readme = replaceSection(readme, "FORTUNE", fortune(), { inline: true });
+const saying = fortune();
+for (const theme of Object.keys(TERMINAL)) writeFileSync(asset(`footer-${theme}.svg`), footerSvg(theme, saying));
 writeFileSync(README, readme);
 console.log(`activity: ${log ? "updated" : "kept"} · contributions: ${cal ? cal.totalContributions : "kept"} · fortune updated`);

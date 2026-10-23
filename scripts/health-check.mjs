@@ -2,6 +2,7 @@
 // NCC-style terminal at the top of the README. The "latest video" and "uptime" lines change, so the workflow
 // re-runs this every 6 hours.
 import { writeFileSync } from "node:fs";
+import { esc, FONT, spans, THEMES, windowFrame } from "./terminal.mjs";
 
 const FEED = "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-Z9VvWUZUq7SNZbaAENnvA";
 const FALLBACK_VIDEO = "AI Distillation Explained";
@@ -19,12 +20,6 @@ const BANNER = [
 const SUBTITLE = "consultant @ nutanix";
 const JOINED = new Date("2021-10-01T12:20:56Z"); // GitHub account created
 
-const THEMES = {
-  dark: { pass: "#3fb950", info: "#4493f8", warn: "#d29922", muted: "#8d96a0", fg: "#e6edf3", shadow: "#1f6f35",
-    bg: "#0d1117", bar: "#161b22", line: "#30363d", red: "#f85149", yellow: "#d29922", green: "#3fb950" },
-  light: { pass: "#1a7f37", info: "#0969da", warn: "#9a6700", muted: "#59636e", fg: "#1f2328", shadow: "#8fd19e",
-    bg: "#ffffff", bar: "#f6f8fa", line: "#d1d9e0", red: "#ff5f57", yellow: "#febc2e", green: "#28c840" },
-};
 let C = THEMES.dark;
 
 function uptime(now = new Date()) {
@@ -45,7 +40,6 @@ const windowAt = subtitleAt + T.subtitle + T.gap;
 const commandAt = windowAt + 0.4;
 const linesAt = commandAt + T.command + 0.3;
 
-const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 
 // Returns null when the feed can't be read, so the last good SVGs stay as they are
@@ -130,10 +124,9 @@ function build(video, theme) {
   const body = lines
     .map((parts, i) => {
       if (!parts.length) return "";
-      const spans = parts.map((p) => `<tspan${p.c ? ` fill="${p.c}"` : ""}${p.b ? ' font-weight="700"' : ""}>${esc(p.t)}</tspan>`).join("");
       const cls = i === 0 ? "cmd" : "ln";
       const delay = i === 0 ? commandAt : (at += T.step);
-      return `<text x="24" y="${winTop + i * lh}" class="${cls}" style="animation-delay:${delay.toFixed(2)}s">${spans}</text>`;
+      return `<text x="24" y="${winTop + i * lh}" class="${cls}" style="animation-delay:${delay.toFixed(2)}s">${spans(parts)}</text>`;
     })
     .filter(Boolean)
     .join("\n    ");
@@ -143,7 +136,7 @@ function build(video, theme) {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Guransh Deol. Health check: Consultant at Nutanix. NCM-MCI, 10 Nutanix certifications. From Punjab, working in Bengaluru. Latest video: ${esc(video)}. Open to opportunities.">
   <style>
-    text { font: 14px ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; fill: ${C.fg}; white-space: pre; }
+    text { font: 14px ${FONT}; fill: ${C.fg}; white-space: pre; }
     .banner { opacity: 0; animation: show ${T.banner}s ease-out ${bannerAt}s forwards; }
     .sub { opacity: 0; animation: show ${T.subtitle}s ease-out ${subtitleAt}s forwards; }
     .win { opacity: 0; transform: translateY(8px); animation: rise .5s ease-out ${windowAt}s forwards; }
@@ -162,11 +155,7 @@ function build(video, theme) {
   <g class="banner">${banner((W - bannerW) / 2, bannerY, cw, ch)}</g>
   <text class="sub" x="${W / 2}" y="${subtitleY}" text-anchor="middle" style="font-size:13px;fill:${C.muted};letter-spacing:.06em">${esc(SUBTITLE)}</text>
   <g class="win">
-    <rect x="0.5" y="${winY + 0.5}" width="${W - 1}" height="${wh}" rx="10" fill="${C.bg}" stroke="${C.line}"/>
-    <path d="M0.5 ${winY + 10.5}a10 10 0 0 1 10-10h${W - 21}a10 10 0 0 1 10 10v24h-${W - 1}z" fill="${C.bar}"/>
-    <line x1="0.5" y1="${winY + 34.5}" x2="${W - 0.5}" y2="${winY + 34.5}" stroke="${C.line}"/>
-    <circle cx="20" cy="${winY + 17.5}" r="6" fill="${C.red}"/><circle cx="40" cy="${winY + 17.5}" r="6" fill="${C.yellow}"/><circle cx="60" cy="${winY + 17.5}" r="6" fill="${C.green}"/>
-    <text x="${W / 2}" y="${winY + 22}" text-anchor="middle" style="font-size:12px;fill:${C.muted}">nutanix@cvm: ~</text>
+    ${windowFrame(W, winY, wh, C)}
     ${body}
     <rect class="cursor" x="${24 + 8.43 * 30}" y="${lastY - 13}" width="8" height="16" fill="${C.pass}"/>
   </g>

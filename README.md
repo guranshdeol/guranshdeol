@@ -2,7 +2,7 @@
 
 ### `$ ssh dc-blr-01`
 
-<p align="center"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables." width="60%"/></picture></p>
+<picture><source media="(prefers-color-scheme: light)" srcset="./assets/datacenter-light.svg"/><img src="./assets/datacenter-dark.svg" alt="Isometric data centre with blinking servers and patch cables." width="100%"/></picture>
 
 ### `$ ncc stats`
 
@@ -41,16 +41,13 @@
 [![@guranshdeol's Holopin badges](https://holopin.me/guranshdeol)](https://holopin.io/@guranshdeol)
 -->
 
----
+<a href="https://guranshdeol.tech"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/footer-light.svg"/><img src="./assets/footer-dark.svg" alt="fortune, then exit: Connection to guranshdeol closed." width="100%"/></picture></a>
 
-<pre>
-<b>nutanix@cvm$</b> fortune
-<!-- FORTUNE:START -->Read-only first. Write access after a human says yes.<!-- FORTUNE:END -->
-
-<b>nutanix@cvm$</b> exit
-logout
-Connection to guranshdeol closed.
-Reconnect at:
-  <a href="https://guranshdeol.tech">guranshdeol.tech</a> · <a href="https://www.youtube.com/@deolguransh">youtube</a>
-  <a href="https://guranshdeol.hashnode.dev">hashnode</a> · <a href="https://www.linkedin.com/in/guranshdeol/">linkedin</a> · <a href="https://twitter.com/guranshdeol">x</a>
-</pre>
+<p align="center">
+  <code>reconnect</code>&nbsp;
+  <a href="https://guranshdeol.tech">guranshdeol.tech</a> ·
+  <a href="https://www.youtube.com/@deolguransh">youtube</a> ·
+  <a href="https://guranshdeol.hashnode.dev">hashnode</a> ·
+  <a href="https://www.linkedin.com/in/guranshdeol/">linkedin</a> ·
+  <a href="https://twitter.com/guranshdeol">x</a>
+</p>

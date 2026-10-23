@@ -1,12 +1,20 @@
-// Small isometric SVG renderer for the coloured, animated scenes in the README (topology and data centre).
-// World axes: x to the right-front, y to the left-front, z up. Faces drawn: top, right (x1) and front (y1).
+// Small 2.5D SVG renderer for the coloured, animated scenes in the README (topology and data centre).
+// World axes: x, y (larger y is nearer the viewer), z up. Faces drawn: top, right (x1) and front (y1).
+// Projections:
+//   isometric(angle): x runs right-down, y left-down; a lower angle flattens the view and the picture
+//   oblique: x runs straight across, depth recedes up-right, so a long row stays wide and short
+export const isometric = (deg = 30) => {
+  const c = Math.cos((deg * Math.PI) / 180), s = Math.sin((deg * Math.PI) / 180);
+  return { ax: c, bx: c, ay: s, by: s };
+};
+export const oblique = (depth = 0.38) => ({ ax: 1, bx: depth, ay: 0, by: depth });
 
-export function createScene(scale = 10) {
+export function createScene(scale = 10, proj = isometric()) {
   const items = [];
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
 
   const project = (x, y, z) => {
-    const sx = (x - y) * 0.866 * scale, sy = (x + y) * 0.5 * scale - z * scale;
+    const sx = (x * proj.ax - y * proj.bx) * scale, sy = (x * proj.ay + y * proj.by) * scale - z * scale;
     minX = Math.min(minX, sx); maxX = Math.max(maxX, sx); minY = Math.min(minY, sy); maxY = Math.max(maxY, sy);
     return [sx, sy];
   };
