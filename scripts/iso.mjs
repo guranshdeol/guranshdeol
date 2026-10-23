@@ -15,7 +15,9 @@ export function createScene(scale = 10) {
   // colors: { top, right, front } or a single hex that gets shaded
   function box(x0, y0, z0, x1, y1, z1, colors, attrs = "") {
     const c = typeof colors === "string" ? shades(colors) : colors;
-    items.push(`<g${attrs}>` +
+    // optional thin edge so neighbouring bars of the same colour stay distinct
+    const edge = c.stroke ? ` stroke="${c.stroke}" stroke-width=".4" stroke-linejoin="round"` : "";
+    items.push(`<g${attrs}${edge}>` +
       `<polygon points="${pts([[x1, y0, z0], [x1, y1, z0], [x1, y1, z1], [x1, y0, z1]])}" fill="${c.right}"/>` +
       `<polygon points="${pts([[x0, y1, z0], [x1, y1, z0], [x1, y1, z1], [x0, y1, z1]])}" fill="${c.front}"/>` +
       `<polygon points="${pts([[x0, y0, z1], [x1, y0, z1], [x1, y1, z1], [x0, y1, z1]])}" fill="${c.top}"/></g>`);
@@ -42,6 +44,29 @@ export function createScene(scale = 10) {
   const bounds = (pad = 0) => ({ x: minX - pad, y: minY - pad, w: maxX - minX + 2 * pad, h: maxY - minY + 2 * pad });
 
   return { box, quad, path, dot, raw, project, bounds, toString: () => items.join("\n") };
+}
+
+// Wraps a scene in a card that renders at 860px wide with the same 13px captions, 10px corners and
+// 1px border as the health-check terminal, whatever the scene's own scale is.
+export function card(scene, { bg, border, title, text }, titleHtml, captionHtml, css = "", label = "") {
+  const W = 860;
+  const raw = scene.bounds(0);
+  const k = (raw.w * 1.04) / W; // viewBox units per rendered px
+  const pad = 16 * k, head = 50 * k;
+  const b = scene.bounds(pad);
+  const vb = [b.x, b.y - head, b.w, b.h + head].map((v) => v.toFixed(1));
+  const x = (b.x + 18 * k).toFixed(1);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" viewBox="${vb.join(" ")}" role="img" aria-label="${label}">
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: ${(13 * k).toFixed(2)}px; }
+    ${css}
+  </style>
+  <rect x="${vb[0]}" y="${vb[1]}" width="${vb[2]}" height="${vb[3]}" rx="${(10 * k).toFixed(2)}" fill="${bg}" stroke="${border}" stroke-width="${k.toFixed(2)}"/>
+  <text x="${x}" y="${(b.y - head + 26 * k).toFixed(1)}" fill="${title}" font-weight="700">${titleHtml}</text>
+  <text x="${x}" y="${(b.y - head + 44 * k).toFixed(1)}" fill="${text}">${captionHtml}</text>
+  ${scene.toString()}
+</svg>
+`;
 }
 
 export function shades(hex) {

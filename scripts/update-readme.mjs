@@ -2,7 +2,7 @@
 // Runs in the "Update README" workflow every 6 hours. Needs GITHUB_TOKEN for the contribution calendar.
 import { readFileSync, writeFileSync } from "node:fs";
 import { createModel, replaceSection } from "./stl.mjs";
-import { createScene, shades } from "./iso.mjs";
+import { card, createScene, shades } from "./iso.mjs";
 
 const USER = "guranshdeol";
 const YOUTUBE = "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-Z9VvWUZUq7SNZbaAENnvA";
@@ -50,6 +50,7 @@ async function githubEvents() {
     const at = new Date(e.created_at);
     if (e.type === "PullRequestEvent") {
       const num = p.pull_request?.number ?? p.number;
+      if (num == null) continue;
       const label = { opened: "💪 Opened", merged: "🎉 Merged", closed: p.pull_request?.merged ? "🎉 Merged" : "❌ Closed", reopened: "🔁 Reopened" }[p.action];
       if (!label) continue;
       // A burst of PRs in one repo on one day becomes one line, so posts and videos stay visible
@@ -59,6 +60,7 @@ async function githubEvents() {
       prs.set(key, group);
     } else if (e.type === "IssuesEvent" && ["opened", "closed"].includes(p.action)) {
       const num = p.issue?.number;
+      if (num == null) continue;
       const label = p.action === "opened" ? "❗ Opened" : "✔️ Closed";
       out.push({ at, line: `${label} issue [#${num}](https://github.com/${e.repo.name}/issues/${num}) in ${repoLink(e.repo.name)}` });
     } else if (e.type === "ReleaseEvent" && p.action === "published") {
@@ -115,14 +117,20 @@ async function activity() {
 async function calendar() {
   if (!token) return null;
   const query = `query { user(login: "${USER}") { contributionsCollection { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }`;
-  const res = await fetch("https://api.github.com/graphql", { method: "POST", headers, body: JSON.stringify({ query }) });
-  if (!res.ok) return null;
-  return (await res.json()).data?.user?.contributionsCollection?.contributionCalendar ?? null;
+  // A failed call keeps the last topology instead of failing the whole run
+  try {
+    const res = await fetch("https://api.github.com/graphql", { method: "POST", headers, body: JSON.stringify({ query }), signal: AbortSignal.timeout(15000) });
+    if (!res.ok) return null;
+    const cal = (await res.json()).data?.user?.contributionsCollection?.contributionCalendar;
+    return cal?.weeks?.length ? cal : null;
+  } catch {
+    return null;
+  }
 }
 
 const LEVELS = {
-  dark: { bg: "#0d1117", text: "#8d96a0", title: "#e6edf3", accent: "#3fb950", cells: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"] },
-  light: { bg: "#ffffff", text: "#59636e", title: "#1f2328", accent: "#1a7f37", cells: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"] },
+  dark: { bg: "#0d1117", border: "#30363d", edge: "rgba(0,0,0,.35)", text: "#8d96a0", title: "#e6edf3", accent: "#3fb950", cells: ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"] },
+  light: { bg: "#ffffff", border: "#d1d9e0", edge: "rgba(0,0,0,.18)", text: "#59636e", title: "#1f2328", accent: "#1a7f37", cells: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"] },
 };
 
 // Contribution calendar → an isometric skyline that rises week by week, coloured like the GitHub graph
@@ -135,26 +143,20 @@ function topologySvg(cal, theme) {
   const cells = [];
   cal.weeks.forEach((w, x) => w.contributionDays.forEach((d, i) => cells.push({ x, y: i, c: d.contributionCount })));
   cells.sort((a, b) => a.x + a.y - (b.x + b.y));
+  // Linear heights, so a 1-contribution day stays short next to the peak; scaled to the year's busiest day
+  const unit = Math.min(0.9, 22 / max);
   for (const { x, y, c } of cells) {
-    const h = c ? 0.6 + 2.6 * Math.log2(1 + c) : 0.15;
-    const color = shades(C.cells[level(c)]);
+    const h = c ? 0.5 + c * unit : 0.15;
+    const color = { ...shades(C.cells[level(c)]), stroke: C.edge };
     s.box(x * 1.2, y * 1.2, 0, x * 1.2 + 1, y * 1.2 + 1, h, color, c ? ` class="b" style="animation-delay:${(x * 0.04).toFixed(2)}s"` : "");
   }
   const busiest = cal.weeks.flatMap((w) => w.contributionDays).reduce((a, b) => (b.contributionCount > a.contributionCount ? b : a));
-  const b = s.bounds(14), head = 46;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="860" viewBox="${b.x.toFixed(0)} ${(b.y - head).toFixed(0)} ${b.w.toFixed(0)} ${(b.h + head).toFixed(0)}" role="img" aria-label="Isometric contribution skyline: ${cal.totalContributions} contributions in the last year.">
-  <style>
-    text { font: 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .b { transform-box: fill-box; transform-origin: 50% 100%; animation: rise .7s cubic-bezier(.2,.8,.3,1.2) both; }
+  const css = `.b { transform-box: fill-box; transform-origin: 50% 100%; animation: rise .7s cubic-bezier(.2,.8,.3,1.2) both; }
     @keyframes rise { from { transform: scaleY(0); } }
-    @media (prefers-reduced-motion: reduce) { .b { animation: none; } }
-  </style>
-  <rect x="${b.x.toFixed(0)}" y="${(b.y - head).toFixed(0)}" width="${b.w.toFixed(0)}" height="${(b.h + head).toFixed(0)}" rx="12" fill="${C.bg}"/>
-  <text x="${(b.x + 18).toFixed(0)}" y="${(b.y - head + 26).toFixed(0)}" fill="${C.title}" font-weight="700">${cal.totalContributions} contributions · last 12 months</text>
-  <text x="${(b.x + 18).toFixed(0)}" y="${(b.y - head + 44).toFixed(0)}" fill="${C.text}">peak <tspan fill="${C.accent}">${busiest.contributionCount}</tspan> on ${busiest.date} · click to open in 3D</text>
-  ${s.toString()}
-</svg>
-`;
+    @media (prefers-reduced-motion: reduce) { .b { animation: none; } }`;
+  return card(s, C, `${cal.totalContributions} contributions · last 12 months`,
+    `peak <tspan fill="${C.accent}">${busiest.contributionCount}</tspan> on ${busiest.date} · click to open in 3D`,
+    css, `Isometric contribution skyline: ${cal.totalContributions} contributions in the last year.`);
 }
 
 // The same calendar as a 3D model, opened from the topology image
@@ -176,7 +178,7 @@ function contributionModel(cal) {
   return m.toString();
 }
 
-// Changes once a week, so the repo isn't committed to every day just for this
+// Changes once a week. The uptime line and the rolling calendar still give about one commit a day.
 function fortune() {
   const n = Math.floor(Date.now() / (7 * 86_400_000));
   return FORTUNES[n % FORTUNES.length];
