@@ -1,75 +1,143 @@
-// Builds the "data centre" 3D block in README.md: a row of racks on a raised floor, servers with drive bays,
-// top-of-rack switches, an overhead cable tray and patch cables. Static, so this only runs by hand:
-//   node scripts/datacenter.mjs
-import { readFileSync, writeFileSync } from "node:fs";
-import { createModel, replaceSection } from "./stl.mjs";
+// Builds the data-centre scene: assets/datacenter-{dark,light}.svg (coloured, animated, shown in the README)
+// and assets/datacenter.stl (the same row of racks as a 3D model GitHub lets visitors rotate).
+// Static, so this only runs by hand:  node scripts/datacenter.mjs
+import { writeFileSync } from "node:fs";
+import { createModel } from "./stl.mjs";
+import { createScene } from "./iso.mjs";
 
-const README = new URL("../README.md", import.meta.url);
-const m = createModel("datacenter");
-
-const RACKS = 3, RW = 6, RD = 9, RH = 20, GAP = 0.8, POST = 0.45;
-const rowW = RACKS * RW + (RACKS - 1) * GAP;
-
-// Raised floor with a row of perforated tiles in front of the racks
-m.box(-3, -7, -0.6, rowW + 3, RD + 3, 0);
-for (let i = 0; i < 6; i++) m.box(-1 + i * 4, -5.5, 0, 1.8 + i * 4, -2.7, 0.08, { bottom: false });
-
-// A cable from a to b, drawn as short box segments that sag in the middle
-function cable(a, b, sag, t = 0.28, segments = 7) {
-  const pt = (s) => [a[0] + (b[0] - a[0]) * s, a[1] + (b[1] - a[1]) * s, a[2] + (b[2] - a[2]) * s - sag * Math.sin(Math.PI * s)];
-  for (let i = 0; i < segments; i++) {
-    const p = pt(i / segments), q = pt((i + 1) / segments);
-    m.box(Math.min(p[0], q[0]) - t / 2, Math.min(p[1], q[1]) - t / 2, Math.min(p[2], q[2]) - t / 2,
-      Math.max(p[0], q[0]) + t / 2, Math.max(p[1], q[1]) + t / 2, Math.max(p[2], q[2]) + t / 2, { bottom: false });
-  }
-}
-
-// Server layout per rack, bottom to top: heights in rack units of 1.7
+const RACKS = 4, RW = 6, RD = 8, RH = 20, GAP = 0.8;
+const UNIT = 1.7;
+// Server heights per rack, bottom to top, in rack units
 const LAYOUTS = [
-  [2, 1, 1, 2, 1, 1, 1],
-  [1, 1, 2, 2, 1, 1, 1],
-  [2, 2, 1, 1, 1, 1, 1],
+  [2, 1, 1, 2, 1, 1, 1, 1],
+  [1, 1, 2, 2, 1, 1, 1, 1],
+  [2, 2, 1, 1, 1, 1, 1, 1],
+  [1, 2, 1, 1, 2, 1, 1, 1],
 ];
+const rackX = (r) => r * (RW + GAP);
+const rowW = rackX(RACKS - 1) + RW;
 
-for (let r = 0; r < RACKS; r++) {
-  const x = r * (RW + GAP);
-  // frame: plinth, four posts, roof
-  m.box(x, 0, 0, x + RW, RD, 0.7, { bottom: false });
-  for (const [px, py] of [[0, 0], [RW - POST, 0], [0, RD - POST], [RW - POST, RD - POST]]) m.box(x + px, py, 0.7, x + px + POST, py + POST, RH - 0.5, { bottom: false });
-  m.box(x, 0, RH - 0.5, x + RW, RD, RH);
+const THEMES = {
+  dark: { bg: "#0d1117", floor: "#161b22", grid: "#21262d", tile: "#1c2a3a", rack: "#2d333b", server: "#444c56", bezel: "#1f242b",
+    switch: "#30363d", tray: "#57606a", text: "#8d96a0", title: "#e6edf3", ok: "#3fb950", warn: "#d29922", info: "#4493f8",
+    cables: ["#4493f8", "#d29922", "#db61a2", "#3fb950"] },
+  light: { bg: "#ffffff", floor: "#eef1f4", grid: "#d8dee4", tile: "#dbe9f7", rack: "#57606a", server: "#8c959f", bezel: "#424a53",
+    switch: "#6e7781", tray: "#8c959f", text: "#59636e", title: "#1f2328", ok: "#1a7f37", warn: "#9a6700", info: "#0969da",
+    cables: ["#0969da", "#bf8700", "#bf3989", "#1a7f37"] },
+};
 
-  // servers with a strip of drive bays on the front
-  let z = 1.1;
-  for (const units of LAYOUTS[r]) {
-    const h = units * 1.7 - 0.3;
-    m.box(x + 0.55, 0.35, z, x + RW - 0.55, RD - 0.6, z + h, { bottom: false });
-    m.box(x + 0.9, 0.1, z + 0.25, x + RW - 2.2, 0.35, z + h - 0.25, { bottom: false });
-    m.box(x + RW - 1.5, 0.1, z + h / 2 - 0.2, x + RW - 0.9, 0.35, z + h / 2 + 0.2, { bottom: false }); // power button
-    z += units * 1.7;
-  }
+// deterministic "random" so the scene is the same on every build
+let seed = 42;
+const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
 
-  // top-of-rack switch with a row of ports, and patch cables down to the servers
-  const sw = RH - 2.1;
-  m.box(x + 0.55, 0.2, sw, x + RW - 0.55, RD - 0.6, sw + 1.2, { bottom: false });
-  for (let p = 0; p < 6; p++) m.box(x + 0.95 + p * 0.75, 0.05, sw + 0.4, x + 1.4 + p * 0.75, 0.2, sw + 0.8, { bottom: false });
-  cable([x + 1.2, -0.15, sw + 0.4], [x + 1.6, -0.15, 6.2], 0, 0.22, 5);
-  cable([x + 4.0, -0.15, sw + 0.4], [x + RW - 1.2, -0.25, 3.0], 0, 0.22, 6);
-  cable([x + 2.4, -0.25, sw + 0.3], [x + 4.6, -0.3, 9.5], 1.4, 0.22, 6);
-
-  // bundle rising from the roof to the tray
-  m.box(x + RW / 2 - 0.35, RD / 2 - 0.35, RH, x + RW / 2 + 0.35, RD / 2 + 0.35, RH + 3, { bottom: false });
+function sag(a, b, depth, n = 12) {
+  return Array.from({ length: n + 1 }, (_, i) => {
+    const t = i / n;
+    return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t - depth * Math.sin(Math.PI * t)];
+  });
 }
 
-// Overhead cable tray on hangers, plus two bundles that sag between it and the end racks
-const trayZ = RH + 3;
-m.box(-1.5, RD / 2 - 1, trayZ, rowW + 1.5, RD / 2 + 1, trayZ + 0.5);
-m.box(-1.5, RD / 2 - 1, trayZ + 0.5, rowW + 1.5, RD / 2 - 0.8, trayZ + 1.1, { bottom: false });
-m.box(-1.5, RD / 2 + 0.8, trayZ + 0.5, rowW + 1.5, RD / 2 + 1, trayZ + 1.1, { bottom: false });
-for (const hx of [-1, rowW / 2, rowW + 1]) m.box(hx - 0.15, RD / 2 - 0.15, trayZ + 1.1, hx + 0.15, RD / 2 + 0.15, trayZ + 5, { bottom: false });
-cable([-1.2, RD / 2, trayZ], [-1.2, RD / 2, 0.2], 0, 0.5, 1);
-cable([rowW + 1.2, RD / 2, trayZ], [rowW + 1.2, RD / 2, 0.2], 0, 0.5, 1);
-cable([0.6, RD / 2, trayZ + 0.6], [rowW - 0.6, RD / 2, trayZ + 0.6], -0.8, 0.35, 10);
+function svg(themeName) {
+  const C = THEMES[themeName];
+  const s = createScene(11);
+  seed = 42;
 
-const readme = readFileSync(README, "utf8");
-writeFileSync(README, replaceSection(readme, "DATACENTER", "```stl\n" + m.toString() + "\n```"));
-console.log(`datacenter: ${m.size} facets`);
+  // raised floor with a grid, and perforated cold-aisle tiles in front of the racks
+  s.quad([[-4, -4, 0], [rowW + 4, -4, 0], [rowW + 4, RD + 9, 0], [-4, RD + 9, 0]], C.floor);
+  for (let gx = -4; gx <= rowW + 4; gx += 2) s.path([[gx, -4, 0], [gx, RD + 9, 0]], C.grid, 1);
+  for (let gy = -4; gy <= RD + 9; gy += 2) s.path([[-4, gy, 0], [rowW + 4, gy, 0]], C.grid, 1);
+  for (let tx = 0; tx < rowW; tx += 4) s.quad([[tx, RD + 2, 0.02], [tx + 2, RD + 2, 0.02], [tx + 2, RD + 6, 0.02], [tx, RD + 6, 0.02]], C.tile);
+
+  const leds = [];
+  for (let r = 0; r < RACKS; r++) {
+    const x = rackX(r);
+    s.box(x, 0, 0, x + RW, RD, RH, C.rack, ` class="rack" style="animation-delay:${(r * 0.25).toFixed(2)}s"`);
+    // servers: bezels sitting proud of the rack front, each with a status LED and drive slots
+    let z = 0.9;
+    for (const units of LAYOUTS[r]) {
+      const h = units * UNIT - 0.25;
+      s.box(x + 0.5, RD, z, x + RW - 0.5, RD + 0.35, z + h, C.server);
+      for (let d = 0; d < 4; d++) s.quad([[x + 0.9 + d * 0.9, RD + 0.36, z + 0.25], [x + 1.6 + d * 0.9, RD + 0.36, z + 0.25], [x + 1.6 + d * 0.9, RD + 0.36, z + h - 0.25], [x + 0.9 + d * 0.9, RD + 0.36, z + h - 0.25]], C.bezel);
+      const roll = rnd();
+      leds.push({ p: [x + RW - 1.0, RD + 0.36, z + h / 2], color: roll < 0.12 ? C.warn : roll < 0.2 ? C.info : C.ok, delay: (rnd() * 2).toFixed(2), dur: (0.8 + rnd() * 1.6).toFixed(2) });
+      z += units * UNIT;
+    }
+    // top-of-rack switch
+    s.box(x + 0.5, RD, RH - 2.2, x + RW - 0.5, RD + 0.45, RH - 0.9, C.switch);
+    for (let p = 0; p < 8; p++) leds.push({ p: [x + 0.9 + p * 0.6, RD + 0.46, RH - 1.55], color: C.ok, delay: (rnd()).toFixed(2), dur: (0.25 + rnd() * 0.5).toFixed(2), r: 1.4 });
+  }
+  for (const l of leds) s.dot(l.p, l.r || 2.2, l.color, ` class="led" style="animation-duration:${l.dur}s;animation-delay:${l.delay}s"`);
+
+  // overhead tray and the patch cables that run from each switch to the next rack, with packets flowing
+  s.box(-1.5, RD - 2.5, RH + 4, rowW + 1.5, RD - 0.5, RH + 4.6, C.tray);
+  for (let r = 0; r < RACKS; r++) {
+    const x = rackX(r) + RW / 2;
+    s.path([[x, RD - 1.5, RH], [x, RD - 1.5, RH + 4]], C.cables[r % 4], 3);
+  }
+  const motions = [];
+  for (let r = 0; r < RACKS - 1; r++) {
+    for (let k = 0; k < 2; k++) {
+      const color = C.cables[(r + k) % 4];
+      const a = [rackX(r) + 1.5 + k * 2.5, RD + 0.6, RH - 1.6];
+      const b = [rackX(r + 1) + 1.5 + k * 2.2, RD + 0.6, RH - 1.6];
+      const d = s.path(sag(a, b, 2.2 + k * 1.3), color, 2.6);
+      motions.push({ d, color, dur: (1.6 + rnd() * 1.4).toFixed(2), delay: (rnd() * 1.5).toFixed(2) });
+    }
+  }
+  // a cable down each rack front from its switch to a server
+  for (let r = 0; r < RACKS; r++) {
+    const x = rackX(r);
+    s.path(sag([x + RW - 1.4, RD + 0.6, RH - 1.6], [x + RW - 1.2, RD + 0.6, 4 + r * 2], 0.6, 6).map(([px, py, pz], i) => [px + Math.sin(i) * 0.15, py, pz]), C.cables[(r + 2) % 4], 2);
+  }
+  for (const m of motions) s.raw(`<circle r="2.6" fill="${C.title}"><animateMotion dur="${m.dur}s" begin="${m.delay}s" repeatCount="indefinite" path="${m.d}"/></circle>`);
+
+  const b = s.bounds(16);
+  const head = 46;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="860" viewBox="${b.x.toFixed(0)} ${(b.y - head).toFixed(0)} ${b.w.toFixed(0)} ${(b.h + head).toFixed(0)}" role="img" aria-label="Isometric data centre: four racks of servers with blinking status lights, a cable tray and patch cables carrying packets.">
+  <style>
+    text { font: 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .rack { opacity: 0; animation: up .6s ease-out forwards; }
+    .led { animation: blink 1.2s steps(1) infinite; }
+    @keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes blink { 50% { opacity: .15; } }
+    @media (prefers-reduced-motion: reduce) { .rack { opacity: 1; animation: none; } .led { animation: none; } }
+  </style>
+  <rect x="${b.x.toFixed(0)}" y="${(b.y - head).toFixed(0)}" width="${b.w.toFixed(0)}" height="${(b.h + head).toFixed(0)}" rx="12" fill="${C.bg}"/>
+  <text x="${(b.x + 18).toFixed(0)}" y="${(b.y - head + 26).toFixed(0)}" fill="${C.title}" font-weight="700">dc-blr-01 · row A</text>
+  <text x="${(b.x + 18).toFixed(0)}" y="${(b.y - head + 44).toFixed(0)}" fill="${C.text}">4 racks · ${LAYOUTS.flat().length} nodes · <tspan fill="${C.ok}">all healthy</tspan> · click to open in 3D</text>
+  ${s.toString()}
+</svg>
+`;
+}
+
+// Same racks as a 3D model (one colour; GitHub's viewer adds the lighting)
+function stl() {
+  const m = createModel("datacenter");
+  m.box(-4, -4, -0.6, rowW + 4, RD + 9, 0);
+  for (let r = 0; r < RACKS; r++) {
+    const x = rackX(r);
+    m.box(x, 0, 0, x + RW, RD, RH, { bottom: false });
+    let z = 0.9;
+    for (const units of LAYOUTS[r]) {
+      const h = units * UNIT - 0.25;
+      m.box(x + 0.5, RD, z, x + RW - 0.5, RD + 0.35, z + h, { bottom: false });
+      m.box(x + RW - 1.3, RD + 0.35, z + h / 2 - 0.25, x + RW - 0.8, RD + 0.6, z + h / 2 + 0.25, { bottom: false });
+      z += units * UNIT;
+    }
+    m.box(x + 0.5, RD, RH - 2.2, x + RW - 0.5, RD + 0.45, RH - 0.9, { bottom: false });
+    m.box(x + RW / 2 - 0.3, RD - 1.8, RH, x + RW / 2 + 0.3, RD - 1.2, RH + 4, { bottom: false });
+  }
+  m.box(-1.5, RD - 2.5, RH + 4, rowW + 1.5, RD - 0.5, RH + 4.6);
+  for (let r = 0; r < RACKS - 1; r++) {
+    const pts = sag([rackX(r) + 2, RD + 0.7, RH - 1.6], [rackX(r + 1) + 2, RD + 0.7, RH - 1.6], 2.5, 8);
+    for (let i = 0; i < pts.length - 1; i++) {
+      const [p, q] = [pts[i], pts[i + 1]];
+      m.box(Math.min(p[0], q[0]) - 0.15, RD + 0.55, Math.min(p[2], q[2]) - 0.15, Math.max(p[0], q[0]) + 0.15, RD + 0.85, Math.max(p[2], q[2]) + 0.15, { bottom: false });
+    }
+  }
+  return m.toString();
+}
+
+for (const theme of Object.keys(THEMES)) writeFileSync(new URL(`../assets/datacenter-${theme}.svg`, import.meta.url), svg(theme));
+writeFileSync(new URL("../assets/datacenter.stl", import.meta.url), stl() + "\n");
+console.log("wrote datacenter-dark.svg, datacenter-light.svg, datacenter.stl");

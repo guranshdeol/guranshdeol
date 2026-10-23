@@ -1,5 +1,6 @@
-// Builds assets/health-check.svg: the name banner and the animated NCC-style terminal at the top of the README.
-// The "latest video" line comes from the YouTube feed, so the workflow re-runs this every 6 hours.
+// Builds assets/health-check-dark.svg and assets/health-check-light.svg: the name banner and the animated
+// NCC-style terminal at the top of the README. The "latest video" and "uptime" lines change, so the workflow
+// re-runs this every 6 hours.
 import { writeFileSync } from "node:fs";
 
 const FEED = "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-Z9VvWUZUq7SNZbaAENnvA";
@@ -15,9 +16,25 @@ const BANNER = [
   "╚██████╔╝╚██████╔╝██║  ██║██║  ██║██║ ╚████║███████║██║  ██║    ██████╔╝███████╗╚██████╔╝███████╗",
   " ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝    ╚═════╝ ╚══════╝ ╚═════╝ ╚══════╝",
 ];
-const SUBTITLE = "consultant @ nutanix  ·  punjab ↔ bengaluru  ·  ncc report";
+const SUBTITLE = "consultant @ nutanix";
+const JOINED = new Date("2021-10-01T12:20:56Z"); // GitHub account created
 
-const C = { pass: "#3fb950", info: "#4493f8", warn: "#d29922", muted: "#8d96a0", fg: "#e6edf3", shadow: "#1f6f35" };
+const THEMES = {
+  dark: { pass: "#3fb950", info: "#4493f8", warn: "#d29922", muted: "#8d96a0", fg: "#e6edf3", shadow: "#1f6f35",
+    bg: "#0d1117", bar: "#161b22", line: "#30363d", red: "#f85149", yellow: "#d29922", green: "#3fb950" },
+  light: { pass: "#1a7f37", info: "#0969da", warn: "#9a6700", muted: "#59636e", fg: "#1f2328", shadow: "#8fd19e",
+    bg: "#ffffff", bar: "#f6f8fa", line: "#d1d9e0", red: "#ff5f57", yellow: "#febc2e", green: "#28c840" },
+};
+let C = THEMES.dark;
+
+function uptime(now = new Date()) {
+  let years = now.getUTCFullYear() - JOINED.getUTCFullYear();
+  const anniversary = new Date(JOINED);
+  anniversary.setUTCFullYear(JOINED.getUTCFullYear() + years);
+  if (anniversary > now) anniversary.setUTCFullYear(JOINED.getUTCFullYear() + --years);
+  const days = Math.floor((now - anniversary) / 86_400_000);
+  return `${years} years, ${days} day${days === 1 ? "" : "s"}`;
+}
 
 // Timeline, in seconds
 const T = { banner: 2.2, subtitle: 1.6, gap: 0.5, command: 3.0, step: 0.55 };
@@ -29,16 +46,18 @@ const linesAt = commandAt + T.command + 0.3;
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 
+// Returns null when the feed can't be read, so the last good SVGs stay as they are
 async function latestVideo() {
   try {
-    const xml = await (await fetch(FEED)).text();
-    const titles = [...xml.matchAll(/<entry>[\s\S]*?<title>([^<]*)<\/title>/g)].map((m) => decode(m[1]));
-    if (!titles[0]) return FALLBACK_VIDEO;
+    const res = await fetch(FEED, { signal: AbortSignal.timeout(15000) });
+    if (!res.ok) return null;
+    const titles = [...(await res.text()).matchAll(/<entry>[\s\S]*?<title>([^<]*)<\/title>/g)].map((m) => decode(m[1]));
+    if (!titles[0]) return null;
     // Keep the line inside the terminal: cut at a colon, then cap the length
     const short = titles[0].split(":")[0].trim();
     return short.length > 44 ? short.slice(0, 43) + "…" : short;
   } catch {
-    return FALLBACK_VIDEO;
+    return null;
   }
 }
 
@@ -78,11 +97,11 @@ function check(status, label, value) {
   return [{ t: "[ " }, { t: status.padEnd(4), c: C[status.toLowerCase()], b: true }, { t: ` ] ${label} ${dots} ${value}` }];
 }
 
-async function build() {
-  const video = await latestVideo();
+function build(video, theme) {
+  C = THEMES[theme];
   const lines = [
     [{ t: "nutanix@cvm$", c: C.pass }, { t: " ncc health_checks run_all --target=guranshdeol" }],
-    [{ t: "Running 8 checks against 1 human...", c: C.muted }],
+    [{ t: "Running 9 checks against 1 human...", c: C.muted }],
     [],
     check("PASS", "role", "Consultant @ Nutanix"),
     check("PASS", "certifications", "NCM-MCI · 10× Nutanix · GitHub"),
@@ -91,9 +110,10 @@ async function build() {
     check("WARN", "side project", "AI agent asks before every fix"),
     [{ t: "         └─ expected behaviour, will not fix", c: C.muted }],
     check("PASS", "latest video", video),
+    check("PASS", "uptime", uptime()),
     check("PASS", "open to opportunities", "yes"),
     [],
-    [{ t: "Summary:", b: true }, { t: " 6 PASS · 1 INFO · 1 WARN · 0 FAIL" }],
+    [{ t: "Summary:", b: true }, { t: " 7 PASS · 1 INFO · 1 WARN · 0 FAIL" }],
     [{ t: "Full report → ", c: C.muted }, { t: "guranshdeol.tech", c: C.info }],
   ];
 
@@ -136,10 +156,10 @@ async function build() {
   <g class="banner">${banner((W - bannerW) / 2, bannerY, cw, ch)}</g>
   <text class="sub" x="${W / 2}" y="${subtitleY}" text-anchor="middle" style="font-size:13px;fill:${C.muted};letter-spacing:.06em">${esc(SUBTITLE)}</text>
   <g class="win">
-    <rect x="0.5" y="${winY + 0.5}" width="${W - 1}" height="${wh}" rx="10" fill="#0d1117" stroke="#30363d"/>
-    <path d="M0.5 ${winY + 10.5}a10 10 0 0 1 10-10h${W - 21}a10 10 0 0 1 10 10v24h-${W - 1}z" fill="#161b22"/>
-    <line x1="0.5" y1="${winY + 34.5}" x2="${W - 0.5}" y2="${winY + 34.5}" stroke="#30363d"/>
-    <circle cx="20" cy="${winY + 17.5}" r="6" fill="#f85149"/><circle cx="40" cy="${winY + 17.5}" r="6" fill="#d29922"/><circle cx="60" cy="${winY + 17.5}" r="6" fill="#3fb950"/>
+    <rect x="0.5" y="${winY + 0.5}" width="${W - 1}" height="${wh}" rx="10" fill="${C.bg}" stroke="${C.line}"/>
+    <path d="M0.5 ${winY + 10.5}a10 10 0 0 1 10-10h${W - 21}a10 10 0 0 1 10 10v24h-${W - 1}z" fill="${C.bar}"/>
+    <line x1="0.5" y1="${winY + 34.5}" x2="${W - 0.5}" y2="${winY + 34.5}" stroke="${C.line}"/>
+    <circle cx="20" cy="${winY + 17.5}" r="6" fill="${C.red}"/><circle cx="40" cy="${winY + 17.5}" r="6" fill="${C.yellow}"/><circle cx="60" cy="${winY + 17.5}" r="6" fill="${C.green}"/>
     <text x="${W / 2}" y="${winY + 22}" text-anchor="middle" style="font-size:12px;fill:${C.muted}">nutanix@cvm: ~</text>
     ${body}
     <rect class="cursor" x="${24 + 8.43 * 30}" y="${lastY - 13}" width="8" height="16" fill="${C.pass}"/>
@@ -148,5 +168,12 @@ async function build() {
 `;
 }
 
-writeFileSync(new URL("../assets/health-check.svg", import.meta.url), await build());
-console.log("wrote assets/health-check.svg");
+const video = (await latestVideo()) ?? (process.argv.includes("--force") ? FALLBACK_VIDEO : null);
+if (!video) {
+  console.log("YouTube feed unavailable; keeping the current SVGs (pass --force to build anyway)");
+  process.exit(0);
+}
+for (const theme of Object.keys(THEMES)) {
+  writeFileSync(new URL(`../assets/health-check-${theme}.svg`, import.meta.url), build(video, theme));
+}
+console.log(`wrote health-check-dark.svg and health-check-light.svg · uptime ${uptime()}`);
