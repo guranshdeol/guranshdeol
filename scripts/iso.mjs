@@ -64,7 +64,8 @@ export function card(scene, { bg, border, title, text }, titleHtml, captionHtml,
   const b = scene.bounds(pad);
   const vb = [b.x, b.y - head, b.w, b.h + head].map((v) => v.toFixed(1));
   const x = (b.x + 18 * k).toFixed(1);
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" viewBox="${vb.join(" ")}" role="img" aria-label="${label}">
+  const H = Math.round((W * (b.h + head)) / b.w);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="${vb.join(" ")}" role="img" aria-label="${label}">
   <style>
     text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: ${(13 * k).toFixed(2)}px; }
     ${css}
