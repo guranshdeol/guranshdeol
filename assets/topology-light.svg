@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="395" viewBox="-63.1 -47.3 489.2 225.0" role="img" aria-label="Isometric contribution skyline: 221 contributions in the last year.">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="401" viewBox="-63.1 -47.3 489.2 227.8" role="img" aria-label="Isometric contribution skyline: 230 contributions in the last year.">
   <style>
     text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 7.40px; }
     .b { transform-box: fill-box; transform-origin: 50% 100%; animation: rise .7s cubic-bezier(.2,.8,.3,1.2) both; }
@@ -6,8 +6,8 @@
     @keyframes rise { from { transform: scaleY(0); } }
     @media (prefers-reduced-motion: reduce) { .b { animation: none; } }
   </style>
-  <rect x="-63.1" y="-47.3" width="489.2" height="225.0" rx="5.70" fill="#ffffff" stroke="#d1d9e0" stroke-width="0.57"/>
-  <text x="-52.8" y="-32.5" fill="#1f2328" font-weight="700">221 contributions · last 12 months</text>
+  <rect x="-63.1" y="-47.3" width="489.2" height="227.8" rx="5.70" fill="#ffffff" stroke="#d1d9e0" stroke-width="0.57"/>
+  <text x="-52.8" y="-32.5" fill="#1f2328" font-weight="700">230 contributions · last 12 months</text>
   <text x="-52.8" y="-22.3" fill="#59636e">peak <tspan fill="#1a7f37">27</tspan> on 2026-10-23</text>
   <text x="358.9" y="-27.9" fill="#59636e" text-anchor="end">less</text><rect x="361.8" y="-33.1" width="5.7" height="5.7" rx="1.14" fill="#ebedf0" stroke="#d1d9e0" stroke-width="0.28"/><rect x="369.2" y="-33.1" width="5.7" height="5.7" rx="1.14" fill="#9be9a8" stroke="#d1d9e0" stroke-width="0.28"/><rect x="376.6" y="-33.1" width="5.7" height="5.7" rx="1.14" fill="#40c463" stroke="#d1d9e0" stroke-width="0.28"/><rect x="384.0" y="-33.1" width="5.7" height="5.7" rx="1.14" fill="#30a14e" stroke="#d1d9e0" stroke-width="0.28"/><rect x="391.4" y="-33.1" width="5.7" height="5.7" rx="1.14" fill="#216e39" stroke="#d1d9e0" stroke-width="0.28"/><text x="401.7" y="-27.9" fill="#59636e">more</text>
   <g class="b" style="animation-delay:0.00s" stroke="rgba(0,0,0,.18)" stroke-width=".4" stroke-linejoin="round"><polygon points="6.6,2.4 0.0,4.8 0.0,-4.9 6.6,-7.3" fill="#7fbf8a"/><polygon points="-6.6,2.4 0.0,4.8 0.0,-4.9 -6.6,-7.3" fill="#63956c"/><polygon points="0.0,-9.7 6.6,-7.3 0.0,-4.9 -6.6,-7.3" fill="#aeffbc"/></g>
@@ -380,6 +380,7 @@
 <g class="b" style="animation-delay:2.08s" stroke="rgba(0,0,0,.18)" stroke-width=".4" stroke-linejoin="round"><polygon points="385.5,163.3 378.9,165.7 378.9,121.7 385.5,119.3" fill="#278440"/><polygon points="372.3,163.3 378.9,165.7 378.9,121.7 372.3,119.3" fill="#1f6732"/><polygon points="378.9,116.9 385.5,119.3 378.9,121.7 372.3,119.3" fill="#36b457"/></g>
 <g class="b" style="animation-delay:2.04s" stroke="rgba(0,0,0,.18)" stroke-width=".4" stroke-linejoin="round"><polygon points="361.8,166.2 355.2,168.5 355.2,130.8 361.8,128.4" fill="#278440"/><polygon points="348.6,166.2 355.2,168.5 355.2,130.8 348.6,128.4" fill="#1f6732"/><polygon points="355.2,126.0 361.8,128.4 355.2,130.8 348.6,128.4" fill="#36b457"/></g>
 <g class="b" style="animation-delay:2.08s" stroke="rgba(0,0,0,.18)" stroke-width=".4" stroke-linejoin="round"><polygon points="377.6,166.2 371.0,168.5 371.0,81.0 377.6,78.7" fill="#1b5a2f"/><polygon points="364.4,166.2 371.0,168.5 371.0,81.0 364.4,78.7" fill="#154624"/><polygon points="371.0,76.3 377.6,78.7 371.0,81.0 364.4,78.7" fill="#257b40"/></g>
+<g class="b" style="animation-delay:2.08s" stroke="rgba(0,0,0,.18)" stroke-width=".4" stroke-linejoin="round"><polygon points="369.7,169.0 363.1,171.4 363.1,139.9 369.7,137.5" fill="#278440"/><polygon points="356.5,169.0 363.1,171.4 363.1,139.9 356.5,137.5" fill="#1f6732"/><polygon points="363.1,135.1 369.7,137.5 363.1,139.9 356.5,137.5" fill="#36b457"/></g>
 <text x="-45.4" y="32.0" fill="#59636e" class="m">Nov</text>
 <text x="-5.9" y="46.4" fill="#59636e" class="m">Dec</text>
 <text x="25.7" y="57.9" fill="#59636e" class="m">Jan</text>
