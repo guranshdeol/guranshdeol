@@ -33,7 +33,7 @@
     <text x="24" y="357" class="ln" style="animation-delay:12.00s"><tspan>[ </tspan><tspan fill="#d29922" font-weight="700">WARN</tspan><tspan> ] side project ............... AI agent asks before every fix</tspan></text>
     <text x="24" y="380" class="ln" style="animation-delay:13.20s"><tspan fill="#8d96a0">         └─ expected behaviour, will not fix</tspan></text>
     <text x="24" y="403" class="ln" style="animation-delay:14.40s"><tspan>[ </tspan><tspan fill="#3fb950" font-weight="700">PASS</tspan><tspan> ] latest video ............... AI Distillation Explained</tspan></text>
-    <text x="24" y="426" class="ln" style="animation-delay:15.60s"><tspan>[ </tspan><tspan fill="#3fb950" font-weight="700">PASS</tspan><tspan> ] uptime ..................... 5 years, 26 days</tspan></text>
+    <text x="24" y="426" class="ln" style="animation-delay:15.60s"><tspan>[ </tspan><tspan fill="#3fb950" font-weight="700">PASS</tspan><tspan> ] uptime ..................... 5 years, 27 days</tspan></text>
     <text x="24" y="449" class="ln" style="animation-delay:16.80s"><tspan>[ </tspan><tspan fill="#3fb950" font-weight="700">PASS</tspan><tspan> ] open to opportunities ...... yes</tspan></text>
     <text x="24" y="495" class="ln" style="animation-delay:18.00s"><tspan font-weight="700">Summary:</tspan><tspan> 7 PASS · 1 INFO · 1 WARN · 0 FAIL</tspan></text>
     <text x="24" y="518" class="ln" style="animation-delay:19.20s"><tspan fill="#8d96a0">Full report → </tspan><tspan fill="#4493f8">guranshdeol.tech</tspan></text>
