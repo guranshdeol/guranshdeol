@@ -20,11 +20,11 @@
 ### `$ tail activity.log`
 
 <!-- ACTIVITY:START -->
-1. 🎉 Merged PR [#1](https://github.com/guranshdeol/guranshdeol/pull/1) in [guranshdeol](https://github.com/guranshdeol/guranshdeol)
-2. ✍️ Published [Many alerts, one cause: an incident responder built on a FalkorDB graph](https://guranshdeol.hashnode.dev/many-alerts-one-cause-an-incident-responder-built-on-a-falkordb-graph)
-3. 🎥 Uploaded [AI Distillation Explained: How AI Models Get Copied](https://www.youtube.com/watch?v=xTxYn6Siwfo)
-4. 🎥 Uploaded [Build Your Own MCP Server in 5 Minutes (Python + Claude Code)](https://www.youtube.com/watch?v=k7Tv0l51UUs)
-5. 🎥 Uploaded [What Is an MCP Server? Set Up Your First One in Claude Code (Beginner's Guide)](https://www.youtube.com/watch?v=_a7QyIm6HGo)
+1. ✍️ Published [Many alerts, one cause: an incident responder built on a FalkorDB graph](https://guranshdeol.hashnode.dev/many-alerts-one-cause-an-incident-responder-built-on-a-falkordb-graph)
+2. 🎥 Uploaded [AI Distillation Explained: How AI Models Get Copied](https://www.youtube.com/watch?v=xTxYn6Siwfo)
+3. 🎥 Uploaded [Build Your Own MCP Server in 5 Minutes (Python + Claude Code)](https://www.youtube.com/watch?v=k7Tv0l51UUs)
+4. 🎥 Uploaded [What Is an MCP Server? Set Up Your First One in Claude Code (Beginner's Guide)](https://www.youtube.com/watch?v=_a7QyIm6HGo)
+5. ✍️ Published [Day 23 of #100DaysOfCode: Deep Dive into the TCP/IP Model's Application Layer](https://guranshdeol.hashnode.dev/day23-tcp)
 <!-- ACTIVITY:END -->
 
 ### `$ ncc stats`
